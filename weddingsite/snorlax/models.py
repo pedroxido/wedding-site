@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
+
 class Person(models.Model):
 	full_name = models.CharField(max_length=100)
 	email = models.EmailField(max_length=254, blank=True)
