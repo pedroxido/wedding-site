@@ -18,9 +18,9 @@ from django.urls import path
 from django.conf.urls import url, include, handler404, handler500
 from django.conf.urls.i18n import i18n_patterns
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     path('rsvp/', include('snorlax.urls')),
-]
+)
 
 
 urlpatterns += i18n_patterns(
