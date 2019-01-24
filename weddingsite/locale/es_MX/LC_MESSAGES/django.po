@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-23 18:35-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: snorlax/models.py:7
+msgid "full name"
+msgstr "nombre completo"
+
+#: snorlax/models.py:8
+msgid "email"
+msgstr "email"
+
+#: snorlax/models.py:14
+msgid "creation date"
+msgstr "fecha de creacion"
+
+#: snorlax/models.py:21
+msgid "Accept"
+msgstr "Si asistire"
+
+#: snorlax/models.py:22
+msgid "Decline"
+msgstr "No asistire"
+
+#: snorlax/models.py:26
+msgid "Meal Option 1"
+msgstr "Opcion de comida 1"
+
+#: snorlax/models.py:27
+msgid "Meal Option 2"
+msgstr "Opcion de comida 2"
+
+#: snorlax/models.py:28
+msgid "Meal Option 3"
+msgstr "Opcion de comida 3"
+
+#: snorlax/models.py:32
+msgid "status"
+msgstr "Estatus"
+
+#: snorlax/models.py:33
+msgid "meal options"
+msgstr "Opcion de comida"
+
+#: snorlax/models.py:34
+msgid "dietary restrictions"
+msgstr "Restriccion alimenticia"
+
+#: weddingsite/settings.py:110
+msgid "Spanish"
+msgstr "Español"
+
+#: weddingsite/settings.py:111
+msgid "Italian"
+msgstr "Italiano"
