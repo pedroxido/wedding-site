@@ -15,15 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import url, include
+from django.conf.urls import url, include, handler404, handler500
 from django.conf.urls.i18n import i18n_patterns
 
-'''urlpatterns = [
-    path('admin/', admin.site.urls),
+urlpatterns = [
+    path('rsvp/', include('snorlax.urls')),
 ]
-'''
 
-urlpatterns = i18n_patterns(
+
+urlpatterns += i18n_patterns(
 	#Django Admin
 	url(r'^admin/', admin.site.urls),
 )
+
+handler404 = 'snorlax.views.view_404'
+#why with debug=true i get 404 and with debug=false i get 500
+handler500 = 'snorlax.views.view_404'

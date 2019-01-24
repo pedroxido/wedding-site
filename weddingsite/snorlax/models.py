@@ -12,7 +12,7 @@ class Person(models.Model):
 
 class FamilyGroup(models.Model):
 	created_date = models.DateTimeField(default=timezone.now, verbose_name=_('creation date'))
-	member = models.ManyToManyField(Person)
+	member = models.ManyToManyField(Person, verbose_name=_('full name'))
 
 	def __str__(self):
 		return str(self.id)
@@ -32,11 +32,12 @@ class RSVP(models.Model):
 	status = models.CharField(max_length=9, choices=RSVP_STATUS, verbose_name=_('status'))
 	meal = models.CharField(max_length=20, choices=MEAL_OPTIONS, verbose_name=_('meal options'))
 	notes = models.TextField(blank=True, verbose_name=_('dietary restrictions'))
-	rsvp_date = models.DateTimeField(default=timezone.now, verbose_name='RSVP date')
+	rsvp_date = models.DateTimeField(default=timezone.now, verbose_name=_('RSVP date'))
 	person = models.OneToOneField(
 		Person,
 		on_delete=models.CASCADE,
 		primary_key=True,
+		verbose_name=_('full name')
 	)
 
 	def __str__(self):

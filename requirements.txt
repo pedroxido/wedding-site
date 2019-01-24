@@ -1,1 +1,5 @@
 Django~=2.0.6
+
+#https://stackoverflow.com/questions/50855974/django-translation-cant-find-msguniq
+#https://fueled.com/blog/supporting-multiple-languages-in-django/
+#https://fueled.com/blog/supporting-multiple-languages-django%E2%80%8A-%E2%80%8A2/
