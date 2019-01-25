@@ -6,6 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 class Person(models.Model):
 	full_name = models.CharField(max_length=100, verbose_name=_('full name'))
 	email = models.EmailField(max_length=254, blank=True, verbose_name=_('email'))
+	confirmation_status = models.BooleanField(default=False, verbose_name=_('confirmed'))
 
 	def __str__(self):
 		return self.full_name
