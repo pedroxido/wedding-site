@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 def do_rsvp(request):
     return render(request, 'snorlax/index_rsvp.html', {})
 
-def view_404(request):
+def view_404(request, exception):
     # make a redirect to homepage - in this case, to RSVP page
     # you can use the name of url or just the plain link
     return redirect('/es/rsvp')

@@ -29,5 +29,3 @@ urlpatterns += i18n_patterns(
 )
 
 handler404 = 'snorlax.views.view_404'
-#why with debug=true i get 404 and with debug=false i get 500
-handler500 = 'snorlax.views.view_404'
