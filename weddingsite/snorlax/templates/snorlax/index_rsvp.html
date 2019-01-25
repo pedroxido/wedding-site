@@ -1,4 +1,4 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,31 +11,31 @@
     <title> Lovly Wedding - Responsive Wedding Template </title>
 
     <!-- Favicon and Touch Icons -->
-    <link href="images/favicon/favicon.png" rel="shortcut icon" type="image/png">
-    <link href="images/favicon/apple-touch-icon.png" rel="apple-touch-icon">
-    <link href="images/favicon/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
-    <link href="images/favicon/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
-    <link href="images/favicon/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+    <link href="{% static 'images/favicon/favicon.png' %}" rel="shortcut icon" type="image/png">
+    <link href="{% static 'images/favicon/apple-touch-icon.png' %}" rel="apple-touch-icon">
+    <link href="{% static 'images/favicon/apple-touch-icon-72x72.png' %}" rel="apple-touch-icon" sizes="72x72">
+    <link href="{% static 'images/favicon/apple-touch-icon-114x114.png' %}" rel="apple-touch-icon" sizes="114x114">
+    <link href="{% static 'images/favicon/apple-touch-icon-144x144.png' %}" rel="apple-touch-icon" sizes="144x144">
 
     <!-- Icon fonts -->
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/flaticon.css" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/flaticon.css' %}" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Plugins for this template -->
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/owl.carousel.css" rel="stylesheet">
-    <link href="css/owl.theme.css" rel="stylesheet">
-    <link href="css/slick.css" rel="stylesheet">
-    <link href="css/slick-theme.css" rel="stylesheet">
-    <link href="css/owl.transitions.css" rel="stylesheet">
-    <link href="css/jquery.fancybox.css" rel="stylesheet">
-    <link href="css/magnific-popup.css" rel="stylesheet">
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.theme.css' %}" rel="stylesheet">
+    <link href="{% static 'css/slick.css' %}" rel="stylesheet">
+    <link href="{% static 'css/slick-theme.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.transitions.css' %}" rel="stylesheet">
+    <link href="{% static 'css/jquery.fancybox.css' %}" rel="stylesheet">
+    <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -167,7 +167,7 @@
                     <div class="col col-xs-12">
                         <div class="gb groom">
                             <div class="img-holder wow fadeInLeftSlow">
-                                <img src="images/couple/img-1.jpg" alt>
+                                <img src="{% static 'images/couple/img-1.jpg' %}" alt>
                             </div>
                             <div class="details">
                                 <div class="details-inner">
@@ -198,7 +198,7 @@
                                 </div>
                             </div>
                             <div class="img-holder wow fadeInRightSlow">
-                                <img src="images/couple/img-2.jpg" alt>
+                                <img src="{% static 'images/couple/img-2.jpg' %}" alt>
                             </div>
                         </div>
                     </div>
@@ -209,7 +209,7 @@
 
 
         <!-- start count-down-section -->
-        <section class="count-down-section section-padding parallax" data-bg-image="images/countdown-bg.jpg" data-speed="7">
+        <section class="count-down-section section-padding parallax" data-bg-image="{% static 'images/countdown-bg.jpg' %}" data-speed="7">
             <div class="container">
                 <div class="row">
                     <div class="col col-md-4">
@@ -253,15 +253,15 @@
                                 </div>
                                 <div class="col col-md-6">
                                     <div class="img-holder">
-                                        <img src="images/story/img-1.jpg" alt class="img img-responsive">
+                                        <img src="{% static 'images/story/img-1.jpg' %}" alt class="img img-responsive">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col col-md-6">
                                     <div class="img-holder right-align-text story-slider">
-                                        <img src="images/story/img-2.jpg" alt class="img img-responsive">
-                                        <img src="images/story/img-3.jpg" alt class="img img-responsive">
+                                        <img src="{% static 'images/story/img-2.jpg' %}" alt class="img img-responsive">
+                                        <img src="{% static 'images/story/img-3.jpg' %}" alt class="img img-responsive">
                                     </div>
                                 </div>
                                 <div class="col col-md-6 text-holder">
@@ -288,15 +288,15 @@
                                 </div>
                                 <div class="col col-md-6">
                                     <div class="img-holder right-align-text story-slider">
-                                        <img src="images/story/img-7.jpg" alt class="img img-responsive">
-                                        <img src="images/story/img-5.jpg" alt class="img img-responsive">
+                                        <img src="{% static 'images/story/img-7.jpg' %}" alt class="img img-responsive">
+                                        <img src="{% static 'images/story/img-5.jpg' %}" alt class="img img-responsive">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col col-md-6">
                                     <div class="img-holder video-holder">
-                                        <img src="images/story/img-8.jpg" alt class="img img-responsive">
+                                        <img src="{% static 'images/story/img-8.jpg' %}" alt class="img img-responsive">
                                         <a href="https://www.youtube.com/embed/XSGBVzeBUbk?autoplay=1" data-type="iframe" class="video-play-btn">
                                             <i class="fa fa-play"></i>
                                         </a>
@@ -322,7 +322,7 @@
 
 
         <!-- start cta -->
-        <section class="cta section-padding parallax" data-bg-image="images/cta-bg.jpg" data-speed="7">
+        <section class="cta section-padding parallax" data-bg-image="{% static 'images/cta-bg.jpg' %}" data-speed="7">
             <div class="container">
                 <div class="row">
                     <div class="col col-xs-12">
@@ -350,7 +350,7 @@
                     <div class="col col-lg-10 col-lg-offset-1">
                         <div class="event">
                             <div class="img-holder">
-                                <img src="images/events/img-1.jpg" alt class="img img-responsive">
+                                <img src="{% static 'images/events/img-1.jpg' %}" alt class="img img-responsive">
                             </div>
                             <div class="details">
                                 <h3>The reception</h3>
@@ -366,7 +366,7 @@
                         </div>
                         <div class="event">
                             <div class="img-holder">
-                                <img src="images/events/img-2.jpg" alt class="img img-responsive">
+                                <img src="{% static 'images/events/img-2.jpg' %}" alt class="img img-responsive">
                             </div>
                             <div class="details">
                                 <h3>Wedding party</h3>
@@ -417,8 +417,8 @@
                                 <div class="tab-pane fade in active grid-wrapper" id="groomsmen">
                                     <div class="grid">
                                         <div class="img-holder">
-                                            <a href="images/groomsmen/img-1.jpg" class="popup-image">
-                                                <img src="images/groomsmen/img-1.jpg" alt class="img img-responsive">
+                                            <a href="{% static 'images/groomsmen/img-1.jpg' %}" class="popup-image">
+                                                <img src="{% static 'images/groomsmen/img-1.jpg' %}" alt class="img img-responsive">
                                             </a>
                                         </div>
                                         <div class="details">
@@ -434,8 +434,8 @@
                                     </div>
                                     <div class="grid">
                                         <div class="img-holder">
-                                            <a href="images/groomsmen/img-2.jpg" class="popup-image">
-                                                <img src="images/groomsmen/img-2.jpg" alt class="img img-responsive">
+                                            <a href="{% static 'images/groomsmen/img-2.jpg' %}" class="popup-image">
+                                                <img src="{% static 'images/groomsmen/img-2.jpg' %}" alt class="img img-responsive">
                                             </a>
                                         </div>
                                         <div class="details">
@@ -449,81 +449,13 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="grid">
-                                        <div class="img-holder">
-                                            <a href="images/groomsmen/img-3.jpg" class="popup-image">
-                                                <img src="images/groomsmen/img-3.jpg" alt class="img img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="details">
-                                            <h3>Kaiste pate</h3>
-                                            <span>Friend</span>
-                                            <ul class="social-links">
-                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="grid">
-                                        <div class="img-holder">
-                                            <a href="images/groomsmen/img-4.jpg" class="popup-image">
-                                                <img src="images/groomsmen/img-4.jpg" alt class="img img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="details">
-                                            <h3>Hatu Michel</h3>
-                                            <span>Friend</span>
-                                            <ul class="social-links">
-                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="grid">
-                                        <div class="img-holder">
-                                            <a href="images/groomsmen/img-5.jpg" class="popup-image">
-                                                <img src="images/groomsmen/img-5.jpg" alt class="img img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="details">
-                                            <h3>Michel doin</h3>
-                                            <span>Friend</span>
-                                            <ul class="social-links">
-                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="grid">
-                                        <div class="img-holder">
-                                            <a href="images/groomsmen/img-6.jpg" class="popup-image">
-                                                <img src="images/groomsmen/img-6.jpg" alt class="img img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="details">
-                                            <h3>Topper jone</h3>
-                                            <span>Friend</span>
-                                            <ul class="social-links">
-                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
                                 </div>
 
                                 <div class="tab-pane fade grid-wrapper" id="bridesmaid">
                                     <div class="grid">
                                         <div class="img-holder">
-                                            <a href="images/bridesmaid/img-1.jpg" class="popup-image">
-                                                <img src="images/bridesmaid/img-1.jpg" alt class="img img-responsive">
+                                            <a href="{% static 'images/bridesmaid/img-1.jpg' %}" class="popup-image">
+                                                <img src="{% static 'images/bridesmaid/img-1.jpg' %}" alt class="img img-responsive">
                                             </a>
                                         </div>
                                         <div class="details">
@@ -539,8 +471,8 @@
                                     </div>
                                     <div class="grid">
                                         <div class="img-holder">
-                                            <a href="images/bridesmaid/img-2.jpg" class="popup-image">
-                                                <img src="images/bridesmaid/img-2.jpg" alt class="img img-responsive">
+                                            <a href="{% static 'images/bridesmaid/img-2.jpg' %}" class="popup-image">
+                                                <img src="{% static 'images/bridesmaid/img-2.jpg' %}" alt class="img img-responsive">
                                             </a>
                                         </div>
                                         <div class="details">
@@ -556,63 +488,12 @@
                                     </div>
                                     <div class="grid">
                                         <div class="img-holder">
-                                            <a href="images/bridesmaid/img-3.jpg" class="popup-image">
-                                                <img src="images/bridesmaid/img-3.jpg" alt class="img img-responsive">
+                                            <a href="{% static 'images/bridesmaid/img-3.jpg' %}" class="popup-image">
+                                                <img src="{% static 'images/bridesmaid/img-3.jpg' %}" alt class="img img-responsive">
                                             </a>
                                         </div>
                                         <div class="details">
                                             <h3>Jonny Mich</h3>
-                                            <span>Friend</span>
-                                            <ul class="social-links">
-                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="grid">
-                                        <div class="img-holder">
-                                            <a href="images/bridesmaid/img-4.jpg" class="popup-image">
-                                                <img src="images/bridesmaid/img-4.jpg" alt class="img img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="details">
-                                            <h3>Brodd Wid</h3>
-                                            <span>Friend</span>
-                                            <ul class="social-links">
-                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="grid">
-                                        <div class="img-holder">
-                                            <a href="images/bridesmaid/img-5.jpg" class="popup-image">
-                                                <img src="images/bridesmaid/img-5.jpg" alt class="img img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="details">
-                                            <h3>Nokshal bedi</h3>
-                                            <span>Friend</span>
-                                            <ul class="social-links">
-                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="grid">
-                                        <div class="img-holder">
-                                            <a href="images/bridesmaid/img-6.jpg" class="popup-image">
-                                                <img src="images/bridesmaid/img-6.jpg" alt class="img img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="details">
-                                            <h3>Holly Fie</h3>
                                             <span>Friend</span>
                                             <ul class="social-links">
                                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -657,38 +538,18 @@
 
                         <div class="gallery-container gallery-fancybox masonry-gallery">
                             <div class="grid wedding">
-                                <a href="images/gallery/img-1.jpg" class="fancybox" data-fancybox-group="gall-1">
-                                    <img src="images/gallery/img-1.jpg" alt class="img img-responsive">
+                                <a href="{% static 'images/gallery/img-1.jpg' %}" class="fancybox" data-fancybox-group="gall-1">
+                                    <img src="{% static 'images/gallery/img-1.jpg' %}" alt class="img img-responsive">
                                 </a>
                             </div>
                             <div class="grid wedding ceremony">
-                                <a href="images/gallery/img-2.jpg" class="fancybox" data-fancybox-group="gall-1">
-                                    <img src="images/gallery/img-2.jpg" alt class="img img-responsive">
+                                <a href="{% static 'images/gallery/img-2.jpg' %}" class="fancybox" data-fancybox-group="gall-1">
+                                    <img src="{% static 'images/gallery/img-2.jpg' %}" alt class="img img-responsive">
                                 </a>
                             </div>
                             <div class="grid ceremony eudcation">
-                                <a href="images/gallery/img-3.jpg" class="fancybox" data-fancybox-group="gall-1">
-                                    <img src="images/gallery/img-3.jpg" alt class="img img-responsive">
-                                </a>
-                            </div>
-                            <div class="grid wedding party">
-                                <a href="images/gallery/img-4.jpg" class="fancybox" data-fancybox-group="gall-1">
-                                    <img src="images/gallery/img-4.jpg" alt class="img img-responsive">
-                                </a>
-                            </div>
-                            <div class="grid ceremony">
-                                <a href="images/gallery/img-5.jpg" class="fancybox" data-fancybox-group="gall-1">
-                                    <img src="images/gallery/img-5.jpg" alt class="img img-responsive">
-                                </a>
-                            </div>
-                            <div class="grid party">
-                                <a href="images/gallery/img-6.jpg" class="fancybox" data-fancybox-group="gall-1">
-                                    <img src="images/gallery/img-6.jpg" alt class="img img-responsive">
-                                </a>
-                            </div>
-                            <div class="grid wedding">
-                                <a href="images/gallery/img-7.jpg" class="fancybox" data-fancybox-group="gall-1">
-                                    <img src="images/gallery/img-7.jpg" alt class="img img-responsive">
+                                <a href="{% static 'images/gallery/img-3.jpg' %}" class="fancybox" data-fancybox-group="gall-1">
+                                    <img src="{% static 'images/gallery/img-3.jpg' %}" alt class="img img-responsive">
                                 </a>
                             </div>
                             <div class="grid ceremony">
@@ -696,15 +557,10 @@
                                     <img src="images/gallery/img-8.jpg" alt class="img img-responsive">
                                 </a> -->
                                 <a href="https://www.youtube.com/embed/XSGBVzeBUbk?autoplay=1" data-type="iframe" class="video-play-btn">
-                                    <img src="images/gallery/img-8.jpg" alt class="img img-responsive">
+                                    <img src="{% static 'images/gallery/img-8.jpg' %}" alt class="img img-responsive">
                                     <i class="fa fa-play"></i>
                                 </a>
 
-                            </div>
-                            <div class="grid ceremony">
-                                <a href="images/gallery/img-9.jpg" class="fancybox" data-fancybox-group="gall-1">
-                                    <img src="images/gallery/img-9.jpg" alt class="img img-responsive">
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -715,7 +571,7 @@
 
 
         <!-- start rsvp-section -->
-        <section class="rsvp-section section-padding parallax" data-bg-image="images/rsvp-bg.jpg" data-speed="7" id="rsvp">
+        <section class="rsvp-section section-padding parallax" data-bg-image="{% static 'images/rsvp-bg.jpg' %}" data-speed="7" id="rsvp">
             <div class="container">
                 <div class="row">
                     <div class="col col-xs-12">
@@ -817,19 +673,19 @@
 
                         <div class="gif-registration-slider">
                             <div class="register">
-                                <img src="images/gift/img-1.jpg" alt class="img img-responsive">
+                                <img src="{% static 'images/gift/img-1.jpg' %}" alt class="img img-responsive">
                             </div>
                             <div class="register">
-                                <img src="images/gift/img-2.jpg" alt class="img img-responsive">
+                                <img src="{% static 'images/gift/img-2.jpg' %}" alt class="img img-responsive">
                             </div>
                             <div class="register">
-                                <img src="images/gift/img-3.jpg" alt class="img img-responsive">
+                                <img src="{% static 'images/gift/img-3.jpg' %}" alt class="img img-responsive">
                             </div>
                             <div class="register">
-                                <img src="images/gift/img-1.jpg" alt class="img img-responsive">
+                                <img src="{% static 'images/gift/img-1.jpg' %}" alt class="img img-responsive">
                             </div>
                             <div class="register">
-                                <img src="images/gift/img-2.jpg" alt class="img img-responsive">
+                                <img src="{% static 'images/gift/img-2.jpg' %}" alt class="img img-responsive">
                             </div>
                         </div>
                     </div>
@@ -862,13 +718,13 @@
 
     <!-- All JavaScript files
     ================================================== -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
     <!-- Plugins for this template -->
-    <script src="js/jquery-plugin-collection.js"></script>
+    <script src="{% static 'js/jquery-plugin-collection.js' %}"></script>
 
     <!-- Custom script for this template -->
-    <script src="js/script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
