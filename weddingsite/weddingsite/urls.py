@@ -29,3 +29,4 @@ urlpatterns += i18n_patterns(
 )
 
 handler404 = 'snorlax.views.view_404'
+handler500 = 'snorlax.views.view_500'
