@@ -89,26 +89,12 @@
                         <ul class="nav navbar-nav">
                             <li><a href="#home">Home</a></li>
                             <li><a href="#couple">Couple</a></li>
-                            <li><a href="#story">Story</a></li>
+                            {% if user.is_authenticated %}
+                            {% if not user.is_staff or not user.is_admin %}
                             <li><a href="#events">Events</a></li>
-                            <li><a href="#people">People</a></li>
-                            <li><a href="#gallery">Gallery</a></li>
+                            {% endif %}
+                            {% endif %}
                             <li><a href="#rsvp">RSVP</a></li>
-                            <li class="menu-item-has-children">
-                                <a href="javascript:void(0);">Blog</a>
-                                <ul class="sub-menu">
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#Level3">Thidr level</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="#">Level3</a></li>
-                                            <li><a href="#">Level3</a></li>
-                                            <li><a href="#">Level3</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
                         </ul>
                     </div><!-- end of nav-collapse -->
                 </div><!-- end of container -->
@@ -154,12 +140,11 @@
 
                 <div class="save-the-date">
                     <h4>Save the date</h4>
-                    <span class="date">25 DEC 2017</span>
+                    <span class="date">14 SEP 2018</span>
                 </div>
             </div>
         </section>
         <!-- end of hero slider -->
-
 
         <!-- start wedding-couple-section -->
         <section class="wedding-couple-section section-padding" id="couple">
@@ -174,13 +159,7 @@
                                 <div class="details-inner">
                                     <h3>The groom</h3>
                                     <p>Hi I am suntina , dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
-                                    <span class="signature">Suntina</span>
-                                    <ul class="social-links">
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    </ul>
+                                    <span class="signature">Davide</span>
                                 </div>
                             </div>
                         </div>
@@ -189,13 +168,7 @@
                                 <div class="details-inner">
                                     <h3>The Bride</h3>
                                     <p>Hi I am suntina , dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
-                                    <span class="signature">Famico</span>
-                                    <ul class="social-links">
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    </ul>
+                                    <span class="signature">Andrea</span>
                                 </div>
                             </div>
                             <div class="img-holder wow fadeInRightSlow">
@@ -208,6 +181,8 @@
         </section>
         <!-- end wedding-couple-section -->
 
+        {% if user.is_authenticated %}
+        {% if not user.is_staff or not user.is_admin %}
 
         <!-- start count-down-section -->
         <section class="count-down-section section-padding parallax" data-bg-image="{% static 'images/countdown-bg.jpg' %}" data-speed="7">
@@ -227,113 +202,6 @@
             </div> <!-- end container -->
         </section>
         <!-- end count-down-section -->
-
-
-        <!-- start story-section -->
-        <section class="story-section section-padding" id="story">
-            <div class="container">
-                <div class="row">
-                    <div class="col col-xs-12">
-                        <div class="section-title">
-                            <div class="vertical-line"><span><i class="fi flaticon-two"></i></span></div>
-                            <h2>Our love story</h2>
-                        </div>
-                    </div>
-                </div> <!-- end section-title -->
-
-                <div class="row">
-                    <div class="col col-xs-12">
-                        <div class="story-timeline">
-                            <div class="row">
-                                <div class="col col-md-6">
-                                    <div class="story-text right-align-text">
-                                        <h3>First meet</h3>
-                                        <span class="date">Jan 12 2017</span>
-                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, </p>
-                                    </div>
-                                </div>
-                                <div class="col col-md-6">
-                                    <div class="img-holder">
-                                        <img src="{% static 'images/story/img-1.jpg' %}" alt class="img img-responsive">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col col-md-6">
-                                    <div class="img-holder right-align-text story-slider">
-                                        <img src="{% static 'images/story/img-2.jpg' %}" alt class="img img-responsive">
-                                        <img src="{% static 'images/story/img-3.jpg' %}" alt class="img img-responsive">
-                                    </div>
-                                </div>
-                                <div class="col col-md-6 text-holder">
-                                    <span class="heart">
-                                        <i class="fa fa-heart"></i>
-                                    </span>
-                                    <div class="story-text">
-                                        <h3>First date</h3>
-                                        <span class="date">Feb 14 2017</span>
-                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col col-md-6 text-holder right-heart">
-                                    <span class="heart">
-                                        <i class="fa fa-heart"></i>
-                                    </span>
-                                    <div class="story-text right-align-text">
-                                        <h3>Proposal</h3>
-                                        <span class="date">Apr 14 2017</span>
-                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, </p>
-                                    </div>
-                                </div>
-                                <div class="col col-md-6">
-                                    <div class="img-holder right-align-text story-slider">
-                                        <img src="{% static 'images/story/img-7.jpg' %}" alt class="img img-responsive">
-                                        <img src="{% static 'images/story/img-5.jpg' %}" alt class="img img-responsive">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col col-md-6">
-                                    <div class="img-holder video-holder">
-                                        <img src="{% static 'images/story/img-8.jpg' %}" alt class="img img-responsive">
-                                        <a href="https://www.youtube.com/embed/XSGBVzeBUbk?autoplay=1" data-type="iframe" class="video-play-btn">
-                                            <i class="fa fa-play"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col col-md-6 text-holder">
-                                    <span class="heart">
-                                        <i class="fa fa-heart"></i>
-                                    </span>
-                                    <div class="story-text">
-                                        <h3>Enagagement</h3>
-                                        <span class="date">Jul 14 2017</span>
-                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- end row -->
-            </div> <!-- end container -->
-        </section>
-        <!-- end story-section -->
-
-
-        <!-- start cta -->
-        <section class="cta section-padding parallax" data-bg-image="{% static 'images/cta-bg.jpg' %}" data-speed="7">
-            <div class="container">
-                <div class="row">
-                    <div class="col col-xs-12">
-                        <h2><span>We are going to...</span> Celebrate Our Love</h2>
-                    </div>
-                </div> <!-- end row -->
-            </div> <!-- end container -->
-        </section>
-        <!-- end cta -->
-
 
         <!-- start events-section -->
         <section class="events-section section-padding" id="events">
@@ -387,189 +255,8 @@
         </section>
         <!-- end events-section -->
 
-
-        <!-- start inportant-people-section -->
-        <section class="inportant-people-section section-padding" id="people">
-            <div class="container">
-                <div class="row">
-                    <div class="col col-xs-12">
-                        <div class="section-title">
-                            <div class="vertical-line"><span><i class="fi flaticon-two"></i></span></div>
-                            <h2>Groomsmen &amp; Bridesmaid</h2>
-                        </div>
-                    </div>
-                </div> <!-- end section-title -->
-
-                <div class="row">
-                    <div class="col col-xs-12">
-                        <div class="inportant-people-content">
-                            <div class="tablist">
-                                <ul class="nav">
-                                    <li class="active">
-                                        <a href="#groomsmen" data-toggle="tab">Groomsmen</a>
-                                    </li>
-                                    <li>
-                                        <a href="#bridesmaid" data-toggle="tab">Bridesmaid</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="tab-content">
-                                <div class="tab-pane fade in active grid-wrapper" id="groomsmen">
-                                    <div class="grid">
-                                        <div class="img-holder">
-                                            <a href="{% static 'images/groomsmen/img-1.jpg' %}" class="popup-image">
-                                                <img src="{% static 'images/groomsmen/img-1.jpg' %}" alt class="img img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="details">
-                                            <h3>Jhon Michel</h3>
-                                            <span>Best man</span>
-                                            <ul class="social-links">
-                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="grid">
-                                        <div class="img-holder">
-                                            <a href="{% static 'images/groomsmen/img-2.jpg' %}" class="popup-image">
-                                                <img src="{% static 'images/groomsmen/img-2.jpg' %}" alt class="img img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="details">
-                                            <h3>Chasmoos jhon</h3>
-                                            <span>Best friden</span>
-                                            <ul class="social-links">
-                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane fade grid-wrapper" id="bridesmaid">
-                                    <div class="grid">
-                                        <div class="img-holder">
-                                            <a href="{% static 'images/bridesmaid/img-1.jpg' %}" class="popup-image">
-                                                <img src="{% static 'images/bridesmaid/img-1.jpg' %}" alt class="img img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="details">
-                                            <h3>Rachel Li</h3>
-                                            <span>Made of honor</span>
-                                            <ul class="social-links">
-                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="grid">
-                                        <div class="img-holder">
-                                            <a href="{% static 'images/bridesmaid/img-2.jpg' %}" class="popup-image">
-                                                <img src="{% static 'images/bridesmaid/img-2.jpg' %}" alt class="img img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="details">
-                                            <h3>Male Vign</h3>
-                                            <span>Best friend</span>
-                                            <ul class="social-links">
-                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="grid">
-                                        <div class="img-holder">
-                                            <a href="{% static 'images/bridesmaid/img-3.jpg' %}" class="popup-image">
-                                                <img src="{% static 'images/bridesmaid/img-3.jpg' %}" alt class="img img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="details">
-                                            <h3>Jonny Mich</h3>
-                                            <span>Friend</span>
-                                            <ul class="social-links">
-                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- end row -->
-            </div> <!-- end container -->
-        </section>
-        <!-- end inportant-people-section -->
-
-
-        <!-- start gallery-section -->
-        <section class="gallery-section section-padding" id="gallery">
-            <div class="container">
-                <div class="row">
-                    <div class="col col-xs-12">
-                        <div class="section-title">
-                            <div class="vertical-line"><span><i class="fi flaticon-two"></i></span></div>
-                            <h2>Our gallery</h2>
-                        </div>
-                    </div>
-                </div> <!-- end section-title -->
-
-                <div class="row">
-                    <div class="col col-xs-12 sortable-gallery">
-                        <div class="gallery-filters">
-                            <ul>
-                                <li><a data-filter="*" href="#" class="current">All</a></li>
-                                <li><a data-filter=".wedding" href="#">Wedding</a></li>
-                                <li><a data-filter=".ceremony" href="#">Ceremony</a></li>
-                                <li><a data-filter=".party" href="#">Party</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="gallery-container gallery-fancybox masonry-gallery">
-                            <div class="grid wedding">
-                                <a href="{% static 'images/gallery/img-1.jpg' %}" class="fancybox" data-fancybox-group="gall-1">
-                                    <img src="{% static 'images/gallery/img-1.jpg' %}" alt class="img img-responsive">
-                                </a>
-                            </div>
-                            <div class="grid wedding ceremony">
-                                <a href="{% static 'images/gallery/img-2.jpg' %}" class="fancybox" data-fancybox-group="gall-1">
-                                    <img src="{% static 'images/gallery/img-2.jpg' %}" alt class="img img-responsive">
-                                </a>
-                            </div>
-                            <div class="grid ceremony eudcation">
-                                <a href="{% static 'images/gallery/img-3.jpg' %}" class="fancybox" data-fancybox-group="gall-1">
-                                    <img src="{% static 'images/gallery/img-3.jpg' %}" alt class="img img-responsive">
-                                </a>
-                            </div>
-                            <div class="grid ceremony">
-                               <!--  <a href="images/gallery/img-8.jpg" class="fancybox" data-fancybox-group="gall-1">
-                                    <img src="images/gallery/img-8.jpg" alt class="img img-responsive">
-                                </a> -->
-                                <a href="https://www.youtube.com/embed/XSGBVzeBUbk?autoplay=1" data-type="iframe" class="video-play-btn">
-                                    <img src="{% static 'images/gallery/img-8.jpg' %}" alt class="img img-responsive">
-                                    <i class="fa fa-play"></i>
-                                </a>
-
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- end row -->
-            </div> <!-- end container -->
-        </section>
-        <!-- end gallery-section -->
-
+        {% endif %}
+        {% endif %}
 
         <!-- start rsvp-section -->
         <section class="rsvp-section section-padding parallax" data-bg-image="{% static 'images/rsvp-bg.jpg' %}" data-speed="7" id="rsvp">
@@ -689,6 +376,8 @@
         </section>
         <!-- end rsvp-section -->
 
+        {% if user.is_authenticated %}
+        {% if not user.is_staff or not user.is_admin %}
 
         <!-- start getting-there-section -->
         <section class="getting-there-section section-padding">
@@ -772,6 +461,9 @@
             </div> <!-- end container -->
         </footer>
         <!-- end footer -->
+
+        {% endif %}
+        {% endif %}
 
     </div>
     <!-- end of page-wrapper -->
