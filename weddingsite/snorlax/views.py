@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.forms.models import model_to_dict
 from .forms import PersonForm, RSVPForm
-from .models import RSVP
+from .models import RSVP, FamilyGroup
 import sys
 from django import http
 
@@ -23,6 +23,9 @@ def render_rsvp(request):
 		if form.is_valid():
 			ctx['person'] = authenticate(name=form.cleaned_data['full_name'])
 			login(request, ctx['person'])
+
+			group =	group_handler(request)
+
 			return redirect('user_login_rsvp')
 		else:
 			ctx['error_focus'] = 'PersonForm'
@@ -30,6 +33,13 @@ def render_rsvp(request):
 	ctx['form'] = form
 
 	return render(request, 'snorlax/index_rsvp.html', ctx)
+
+def group_handler(request):
+	person_group_object = FamilyGroup.objects.filter(member=request.user)
+	if person_group_object.count() > 1 :
+		return None
+	group = FamilyGroup.objects.filter(pk=person_group_object[0].id)
+	return group
 
 
 @login_required(login_url='/' + get_language() + '/rsvp/#rsvp')
