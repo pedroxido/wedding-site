@@ -582,7 +582,31 @@
                         </div>
                     </div>
                 </div> <!-- end section-title -->
-
+                {% if success %}
+                                <div class="alert alert-success" id="success-alert">
+                                    <button type="button" class="close" data-dismiss="alert">x</button>
+                                    <strong>Success! </strong>
+                                    Your information has been stored
+                                </div>
+                                <script>
+                                    $(document).ready (function(){
+                                            $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+                                           $("#success-alert").slideUp(500);
+                                        });
+                                     });
+                                </script>
+                {% endif %}
+                {% if form.errors %}
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <br/>
+                            <div class="col col-md-12 success-error-message alert alert-danger" id="danger-alert" role="alert"">
+                                <button type="button" class="close" data-dismiss="alert">x</button>
+                                <div id="success">{{ error|escape }}</div>
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
                 <div class="row content">
                     <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <p>Please confirm before March 31th, 2019.</p>
@@ -597,20 +621,11 @@
                                 <br/>
                                 <!--<span id="loader"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i></span>-->
                             </div>
-                            {% if form.errors %}
-                                {% for field in form %}
-                                    {% for error in field.errors %}
-                                        <br/>
-                                        <div class="col col-md-12 success-error-message alert alert-danger" role="alert"">
-                                            <div id="success">{{ error|escape }}</div>
-                                        </div>
-                                    {% endfor %}
-                                {% endfor %}
-                            {% endif %}
+                            
                         </form>
                         {% elif form_name == 'rsvp' %}
-                        <p>{{person}}</p>
-                        <form action="do/" id="rsvp form" class="form row" method="post">
+                        <p>{{user}}</p>
+                        <form  id="rsvp form" class="form row" method="post">
                             {% csrf_token %}
                             <div class="col col-sm-6">
                                 <h3 style="color:#FFF;">{% trans 'Will you go?' %}</h3>
@@ -627,8 +642,8 @@
                                 {{form.notes}}
                             </div>
                             <div class="col col-sm-12 submit-btn">
-                                <button type="submit" class="submit">Back</button>
-                                <button type="submit" class="submit">Send Invitation</button>
+                                <button type="submit" class="submit" name="back" formnovalidate>Back</button>
+                                <button type="submit" class="submit" name="submit">Confirmar Asistencia</button>
                             </div>
                         </form>
                         {% endif %}

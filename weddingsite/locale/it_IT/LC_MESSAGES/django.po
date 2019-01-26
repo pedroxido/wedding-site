@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-23 23:06-0600\n"
+"POT-Creation-Date: 2019-01-25 21:33-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: snorlax/models.py:7 snorlax/models.py:15 snorlax/models.py:40
+#: snorlax/forms.py:24
+msgid ""
+"Oops! We are having trouble finding your invite. Please try another spelling "
+"of your name or contact the couple"
+msgstr ""
+
+#: snorlax/models.py:7 snorlax/models.py:20 snorlax/models.py:45
 msgid "full name"
 msgstr "nome e cognome"
 
@@ -25,54 +31,61 @@ msgstr "nome e cognome"
 msgid "email"
 msgstr "e-mail"
 
-#: snorlax/models.py:14
+#: snorlax/models.py:9
+msgid "confirmed"
+msgstr ""
+
+#: snorlax/models.py:19
 msgid "creation date"
 msgstr "data di creazione"
 
-#: snorlax/models.py:21
+#: snorlax/models.py:26
 msgid "Accept"
 msgstr "Acettare"
 
-#: snorlax/models.py:22
+#: snorlax/models.py:27
 msgid "Decline"
 msgstr "Declino"
 
-#: snorlax/models.py:26
+#: snorlax/models.py:31
 msgid "Meal Option 1"
 msgstr "Opzione Pasto 1"
 
-#: snorlax/models.py:27
+#: snorlax/models.py:32
 msgid "Meal Option 2"
 msgstr "Opzione Pasto 2"
 
-#: snorlax/models.py:28
+#: snorlax/models.py:33
 msgid "Meal Option 3"
 msgstr "Opzione Pasto 3"
 
-#: snorlax/models.py:32
+#: snorlax/models.py:37
 msgid "status"
 msgstr "stato"
 
-#: snorlax/models.py:33
+#: snorlax/models.py:38 snorlax/templates/snorlax/index_rsvp.html:621
 msgid "meal options"
 msgstr "opzione di pasto"
 
-#: snorlax/models.py:34
+#: snorlax/models.py:39 snorlax/templates/snorlax/index_rsvp.html:626
 msgid "dietary restrictions"
 msgstr "restrizione dietetica"
 
-#: snorlax/models.py:35
+#: snorlax/models.py:40
 msgid "RSVP date"
 msgstr "data di conferma"
 
-#: snorlax/templates/snorlax/index_rsvp.html:8
-msgid "Davide and Andrea&#39;s wedding"
-msgstr "Matrimonio di Davide e Andrea"
+#: snorlax/templates/snorlax/index_rsvp.html:616
+msgid "Will you go?"
+msgstr ""
 
-#: weddingsite/settings.py:110
+#: weddingsite/settings.py:117
 msgid "Spanish"
 msgstr "Spagnolo"
 
-#: weddingsite/settings.py:111
+#: weddingsite/settings.py:118
 msgid "Italian"
 msgstr "Italiano"
+
+#~ msgid "Davide and Andrea&#39;s wedding"
+#~ msgstr "Matrimonio di Davide e Andrea"

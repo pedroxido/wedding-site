@@ -12,6 +12,7 @@ class Person(models.Model):
 	def __str__(self):
 		return self.full_name
 
+	@property
 	def is_authenticated(self):
 		return True
 
