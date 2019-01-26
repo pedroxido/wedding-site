@@ -623,7 +623,7 @@
                             </div>
                             
                         </form>
-                        {% elif form_name == 'rsvp' %}
+                        {% elif form_name == 'rsvp' or form_name == 'rsvp-focus' %}
                         <p>{{user}}</p>
                         <form  id="rsvp form" class="form row" method="post">
                             {% csrf_token %}
@@ -790,7 +790,7 @@
     <script src="{% static 'js/script.js' %}"></script>
 
     {% if error_focus or form_name %}
-        {% if error_focus == "PersonForm" or form_name == 'rsvp' %}
+        {% if error_focus == "PersonForm" or form_name == 'rsvp-focus' %}
             <script>
                 $(function() {
                     $('html, body').animate({

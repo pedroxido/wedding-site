@@ -16,6 +16,7 @@ def render_rsvp(request):
 		print("authenticated :: redirect")
 		return redirect('user_login_rsvp')
 
+	print("line 19: not authenticated")
 	ctx = {}
 	form = PersonForm(request.POST or None, request.FILES or None)
 	ctx['form_name'] = 'person'
@@ -24,6 +25,7 @@ def render_rsvp(request):
 		if form.is_valid():
 			ctx['person'] = authenticate(name=form.cleaned_data['full_name'])
 			login(request, ctx['person'])
+			return redirect('user_login_rsvp')
 			#path = '/' + get_language() + '/rsvp/#rsvp'
 			#return http.HttpResponseRedirect(path)
 		else:
@@ -39,14 +41,21 @@ def render_auth_rsvp(request):
 	print("calling render_auth_rsvp")
 	ctx = {}
 
+	if request.META.get('HTTP_REFERER') is None:
+		ctx['form_name'] = 'rsvp'
+	elif 'rsvp' in request.META.get('HTTP_REFERER'):
+		ctx['form_name'] = 'rsvp-focus'
+	else:
+		ctx['form_name'] = 'rsvp'
+
+	print(ctx['form_name'])
+
 	try:
 		initial_rsvp = get_object_or_404(RSVP, person=request.user)
 		dict_initial_rsvp = model_to_dict(initial_rsvp)
-		form = RSVPForm(initial=dict_initial_rsvp)
+		form = RSVPForm(request.POST or None,instance=initial_rsvp, initial=dict_initial_rsvp)
 	except:
 		form = RSVPForm(request.POST or None, request.FILES or None)
-
-	ctx['form_name'] = 'rsvp'
 
 	if request.method == 'POST':
 		if 'submit' in request.POST:
@@ -56,11 +65,13 @@ def render_auth_rsvp(request):
 				rsvp.save()
 				ctx['success'] = 1
 				print("saved RSVP Form")
+				ctx['form_name'] = 'rsvp-focus'
+			else:
+				ctx['error_focus'] = 'RSVPForm'
+				ctx['form_name'] = 'rsvp-focus'
 		elif 'back' in request.POST:
 			logout(request)
 			return redirect('render_rsvp')
-	else:
-		ctx['error_focus'] = 'RSVPForm'
 	
 	ctx['form'] = form
 
