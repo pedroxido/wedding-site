@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -80,7 +81,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <div class="couple-logo">
-                            <h1><a href="#home">S <i class="fi flaticon-shape-1"></i> F</a></h1>
+                            <h1><a href="#home">D <i class="fi flaticon-shape-1"></i> A</a></h1>
                         </div>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder">
@@ -584,7 +585,54 @@
 
                 <div class="row content">
                     <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                        <p>Please reserve before December 16th, 2017.</p>
+                        <p>Please confirm before March 31th, 2019.</p>
+                        {% if form_name == 'person' %}
+                        <form id="rsvp form" class="form row" method="POST">
+                            {% csrf_token %}
+                            <div class="col col-sm-10">
+                                {{ form.full_name }}
+                            </div>
+                            <div class="col col-sm-12 submit-btn">
+                                <button type="submit" class="submit">Find my invitation</button>
+                                <br/>
+                                <!--<span id="loader"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i></span>-->
+                            </div>
+                            {% if form.errors %}
+                                {% for field in form %}
+                                    {% for error in field.errors %}
+                                        <br/>
+                                        <div class="col col-md-12 success-error-message alert alert-danger" role="alert"">
+                                            <div id="success">{{ error|escape }}</div>
+                                        </div>
+                                    {% endfor %}
+                                {% endfor %}
+                            {% endif %}
+                        </form>
+                        {% elif form_name == 'rsvp' %}
+                        <p>{{person}}</p>
+                        <form action="do/" id="rsvp form" class="form row" method="post">
+                            {% csrf_token %}
+                            <div class="col col-sm-6">
+                                <h3 style="color:#FFF;">{% trans 'Will you go?' %}</h3>
+                                {{form.status}}
+                                
+                            </div>
+                            <div class="col col-sm-6">
+                                <h3 style="color:#FFF;">{% trans 'meal options' %}</h3>
+                                {{form.meal}}
+                                
+                            </div>
+                            <div class="col col-sm-12">
+                                <h3 style="color:#FFF;">{% trans 'dietary restrictions' %}</h3>
+                                {{form.notes}}
+                            </div>
+                            <div class="col col-sm-12 submit-btn">
+                                <button type="submit" class="submit">Back</button>
+                                <button type="submit" class="submit">Send Invitation</button>
+                            </div>
+                        </form>
+                        {% endif %}
+                    <!-- 
                         <form id="rsvp-form" class="form validate-rsvp-form row" method="post">
                             <div class="col col-sm-6">
                                 <input type="text" name="name" class="form-control" placeholder="Your Name*">
@@ -597,8 +645,6 @@
                                     <option disabled selected>Number Of Guest*</option>
                                     <option>1</option>
                                     <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
                                 </select>
                             </div>
                             <div class="col col-sm-6">
@@ -621,6 +667,7 @@
                                 <div id="error"> Error occurred while sending email. Please try again later. </div>
                             </div>
                         </form>
+                    -->
                     </div>
                 </div> <!-- end row -->
             </div> <!-- end container -->
@@ -726,5 +773,17 @@
 
     <!-- Custom script for this template -->
     <script src="{% static 'js/script.js' %}"></script>
+
+    {% if error_focus or form_name %}
+        {% if error_focus == "PersonForm" or form_name == 'rsvp' %}
+            <script>
+                $(function() {
+                    $('html, body').animate({
+                        scrollTop: $("#rsvp").offset().top
+                    }, 1);
+                 });
+            </script>
+        {% endif %}
+    {% endif %}
 </body>
 </html>

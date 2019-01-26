@@ -7,9 +7,13 @@ class Person(models.Model):
 	full_name = models.CharField(max_length=100, verbose_name=_('full name'))
 	email = models.EmailField(max_length=254, blank=True, verbose_name=_('email'))
 	confirmation_status = models.BooleanField(default=False, verbose_name=_('confirmed'))
+	last_login = models.DateTimeField(default=timezone.now)
 
 	def __str__(self):
 		return self.full_name
+
+	def is_authenticated(self):
+		return True
 
 class FamilyGroup(models.Model):
 	created_date = models.DateTimeField(default=timezone.now, verbose_name=_('creation date'))

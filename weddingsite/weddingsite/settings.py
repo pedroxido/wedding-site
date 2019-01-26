@@ -54,6 +54,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'snorlax.auth_backend.PasswordlessAuthBackend',
+)
+
+
 ROOT_URLCONF = 'weddingsite.urls'
 
 TEMPLATES = [
