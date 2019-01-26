@@ -13,10 +13,8 @@ from django import http
 def render_rsvp(request):
 
 	if request.user.is_authenticated :
-		print("authenticated :: redirect")
 		return redirect('user_login_rsvp')
 
-	print("line 19: not authenticated")
 	ctx = {}
 	form = PersonForm(request.POST or None, request.FILES or None)
 	ctx['form_name'] = 'person'
@@ -26,8 +24,6 @@ def render_rsvp(request):
 			ctx['person'] = authenticate(name=form.cleaned_data['full_name'])
 			login(request, ctx['person'])
 			return redirect('user_login_rsvp')
-			#path = '/' + get_language() + '/rsvp/#rsvp'
-			#return http.HttpResponseRedirect(path)
 		else:
 			ctx['error_focus'] = 'PersonForm'
 	
@@ -38,7 +34,6 @@ def render_rsvp(request):
 
 @login_required(login_url='/' + get_language() + '/rsvp/#rsvp')
 def render_auth_rsvp(request):
-	print("calling render_auth_rsvp")
 	ctx = {}
 
 	if request.META.get('HTTP_REFERER') is None:
@@ -64,7 +59,6 @@ def render_auth_rsvp(request):
 				rsvp.person = request.user
 				rsvp.save()
 				ctx['success'] = 1
-				print("saved RSVP Form")
 				ctx['form_name'] = 'rsvp-focus'
 			else:
 				ctx['error_focus'] = 'RSVPForm'
