@@ -283,6 +283,21 @@
                                      });
                                 </script>
                 {% endif %}
+
+                {% if error_message %}
+                                <div class="alert alert-danger" id="danger-alert">
+                                    <button type="button" class="close" data-dismiss="alert">x</button>
+                                    {{ error_message }}
+                                </div>
+                                <script>
+                                    $(document).ready (function(){
+                                            $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+                                           $("#success-alert").slideUp(500);
+                                        });
+                                     });
+                                </script>
+                {% endif %}
+
                 {% if form.errors %}
                     {% for field in form %}
                         {% for error in field.errors %}

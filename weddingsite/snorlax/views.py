@@ -20,23 +20,35 @@ def render_rsvp(request):
 	ctx['form_name'] = 'person'
 
 	if request.method == 'POST':
-		if form.is_valid():
-			ctx['person'] = authenticate(name=form.cleaned_data['full_name'])
-			login(request, ctx['person'])
+		try:
+			if form.is_valid():
+				group =	group_handler(form.cleaned_data['full_name'])
+				print("group error!")
+				if group is None:
+					ctx['error_message'] = 'There is more than one "' + form.cleaned_data['full_name'] + '" on the guest list. Please contact Davide & Andrea to RSVP.'
+					ctx['error_focus'] = 'PersonForm'
+				else:
+					ctx['person'] = authenticate(name=form.cleaned_data['full_name'])
+					login(request, ctx['person'])
 
-			group =	group_handler(request)
-
-			return redirect('user_login_rsvp')
-		else:
-			ctx['error_focus'] = 'PersonForm'
+					return redirect('user_login_rsvp')
+			else:
+				ctx['error_focus'] = 'PersonForm'
+		except Exception as e:
+			if 'MultipleObjectsReturned' in type(e).__name__:
+				ctx['error_message'] = 'There is more than one "' + form.cleaned_data['full_name'] + '" on the guest list. Please contact Davide & Andrea to RSVP.'
+				ctx['error_focus'] = 'PersonForm'
+			else:
+				view_500(request, template_name='snorlax/500.html')
 	
 	ctx['form'] = form
 
 	return render(request, 'snorlax/index_rsvp.html', ctx)
 
-def group_handler(request):
-	person_group_object = FamilyGroup.objects.filter(member=request.user)
+def group_handler(user):
+	person_group_object = FamilyGroup.objects.filter(member__full_name=user)
 	if person_group_object.count() > 1 :
+		print("Error")
 		return None
 	group = FamilyGroup.objects.filter(pk=person_group_object[0].id)
 	return group
