@@ -19,6 +19,7 @@ def render_rsvp(request):
 
 	ctx = {}
 	form = PersonForm(request.POST or None, request.FILES or None)
+	ctx['language'] = get_language()
 	ctx['form_name'] = 'person'
 
 	if request.method == 'POST':
@@ -59,6 +60,7 @@ def group_handler(user):
 @login_required(login_url='/' + get_language() + '/rsvp/#rsvp')
 def render_auth_rsvp(request):
 	ctx = {}
+	ctx['language'] = get_language()
 
 	if request.META.get('HTTP_REFERER') is None:
 		ctx['form_name'] = 'rsvp'
