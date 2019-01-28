@@ -4,8 +4,10 @@ from django.utils.translation import get_language
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.forms.models import model_to_dict
+from django.db.models import F
 from .forms import PersonForm, RSVPForm
-from .models import RSVP, FamilyGroup
+from django.forms import modelformset_factory
+from .models import  FamilyGroup, Person
 import sys
 from django import http
 
@@ -67,22 +69,33 @@ def render_auth_rsvp(request):
 
 	print(ctx['form_name'])
 
-	try:
-		initial_rsvp = get_object_or_404(RSVP, person=request.user)
-		dict_initial_rsvp = model_to_dict(initial_rsvp)
-		form = RSVPForm(request.POST or None,instance=initial_rsvp, initial=dict_initial_rsvp)
-	except:
-		form = RSVPForm(request.POST or None, request.FILES or None)
+	member = group_handler(request.user)
+	ctx['members'] = member.values(person=F("member__full_name"))
+	ctx['total_guest'] = member.values('member').count()
+	print("total guest: " + str(ctx['total_guest']))
+	formset = modelformset_factory(Person, form=RSVPForm, extra=0)
+
+	
+	#get a list of values from ctx[members]
+	param_dict = list(ctx['members'])
+	person_qs = query_values_helper(param_dict)
+	print("OLA")
+	initial_rsvp = Person.objects.all().filter(full_name__in=person_qs)
+	print(initial_rsvp.count())
+	form = formset(request.POST or None, queryset=initial_rsvp)
+	print("CHIx")
+	
 
 	if request.method == 'POST':
 		if 'submit' in request.POST:
+			for f in form:
+				print(f)
 			if form.is_valid():
-				rsvp = form.save(commit=False)
-				rsvp.person = request.user
-				rsvp.save()
+				rsvp = form.save()
 				ctx['success'] = 1
 				ctx['form_name'] = 'rsvp-focus'
 			else:
+				print(form.errors)
 				ctx['error_focus'] = 'RSVPForm'
 				ctx['form_name'] = 'rsvp-focus'
 		elif 'back' in request.POST:
@@ -92,6 +105,17 @@ def render_auth_rsvp(request):
 	ctx['form'] = form
 
 	return render(request, 'snorlax/index_rsvp.html', ctx)
+
+def query_values_helper(param_dict):
+	result_dict = {}
+	index = 0
+	for element in param_dict:
+		for key, value in element.items():
+			result_dict[index]=value
+			index += 1
+	values = list(result_dict.values())
+	return values
+
 
 
 def view_404(request, exception):
@@ -107,3 +131,4 @@ def view_500(request, template_name='snorlax/500.html'):
 	x = traceback.print_tb(ltraceback)
 	ctx = {'type':ltype,'value':lvalue,'traceback':x}
 	return http.HttpResponseServerError(t.render(ctx))
+

@@ -302,7 +302,7 @@
                     {% for field in form %}
                         {% for error in field.errors %}
                             <br/>
-                            <div class="col col-md-12 success-error-message alert alert-danger" id="danger-alert" role="alert"">
+                            <div class="col col-md-12 success-error-message alert alert-danger" id="danger-alert" role="alert">
                                 <button type="button" class="close" data-dismiss="alert">x</button>
                                 <div id="success">{{ error|escape }}</div>
                             </div>
@@ -312,6 +312,7 @@
                 <div class="row content">
                     <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <p>Please confirm before March 31th, 2019.</p>
+
                         {% if form_name == 'person' %}
                         <form id="rsvp form" class="form row" method="POST">
                             {% csrf_token %}
@@ -321,35 +322,47 @@
                             <div class="col col-sm-12 submit-btn">
                                 <button type="submit" class="submit">Find my invitation</button>
                                 <br/>
-                                <!--<span id="loader"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i></span>-->
                             </div>
                             
                         </form>
                         {% elif form_name == 'rsvp' or form_name == 'rsvp-focus' %}
-                        <p>{{user}}</p>
-                        <form  id="rsvp form" class="form row" method="post">
-                            {% csrf_token %}
-                            <div class="col col-sm-6">
-                                <h3 style="color:#FFF;">{% trans 'Will you go?' %}</h3>
-                                {{form.status}}
-                                
-                            </div>
-                            <div class="col col-sm-6">
-                                <h3 style="color:#FFF;">{% trans 'meal options' %}</h3>
-                                {{form.meal}}
-                                
-                            </div>
-                            <div class="col col-sm-12">
-                                <h3 style="color:#FFF;">{% trans 'dietary restrictions' %}</h3>
-                                {{form.notes}}
+                            <form  id="rsvp form" class="form row" method="post">
+                                    {% csrf_token %}
+                            {{ form.management_form }}
+                            {% for single_form in form %}
+
+                            <div class="f-management" id="{forloop.counter}}" >
+                                <p>
+                                    <b>Guest {{forloop.counter}} of {{ total_guest }} : 
+                                    {{ single_form.full_name.value }}</b>
+                                </p>
+                                    <div class="col col-sm-6">
+                                        <h3 style="color:#FFF;">{{ single_form.status.label_tag }}</h3>
+                                        {{single_form.status}}
+                                        
+                                    </div>
+                                    <div class="col col-sm-6">
+                                        <h3 style="color:#FFF;">{{ single_form.meal.label_tag }}</h3>
+                                        {{single_form.meal}}
+                                        
+                                    </div>
+                                    <div class="col col-sm-12">
+                                        <h3 style="color:#FFF;">{{ single_form.notes.label_tag }}</h3>
+                                        {{single_form.notes}}
+                                    </div>
+                                    <input type="hidden" name="form-{{forloop.counter0}}-full_name" class="hidden-full-name" id="id_form-{{forloop.counter0}}-full_name" value="{{ single_form.full_name.value }}"/>
+                                    {{ single_form.id }}
+                            {% endfor %}
+
                             </div>
                             <div class="col col-sm-12 submit-btn">
-                                <button type="submit" class="submit" name="back" formnovalidate>Back</button>
-                                <button type="submit" class="submit" name="submit">Confirmar Asistencia</button>
-                            </div>
-                        </form>
+                                    <button type="submit" class="submit" name="back" formnovalidate>Back</button>
+                                    <button type="submit" class="submit" name="submit">Confirmar Asistencia</button>
+                                </div>
+                            </form>
                         {% endif %}
-                    <!-- 
+                        
+<!--
                         <form id="rsvp-form" class="form validate-rsvp-form row" method="post">
                             <div class="col col-sm-6">
                                 <input type="text" name="name" class="form-control" placeholder="Your Name*">
@@ -385,6 +398,7 @@
                             </div>
                         </form>
                     -->
+
                     </div>
                 </div> <!-- end row -->
             </div> <!-- end container -->
@@ -507,5 +521,13 @@
             </script>
         {% endif %}
     {% endif %}
+
+    <script>
+        $('.f-management').each(function(i, obj) {
+            if(i >= {{total_guest}}){
+                $(this).hide();
+            }
+        });
+    </script>
 </body>
 </html>

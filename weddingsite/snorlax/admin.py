@@ -3,4 +3,3 @@ from .models import *
 
 admin.site.register(Person)
 admin.site.register(FamilyGroup)
-admin.site.register(RSVP)
