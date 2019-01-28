@@ -332,8 +332,7 @@
                                 {{ form.full_name }}
                             </div>
                             <div class="col col-sm-12 submit-btn">
-                                <button type="submit" class="submit">Find my invitation</button>
-                                <br/>
+                                <button type="submit" class="submit" name="submit">Find my invitation</button>
                             </div>
                             
                         </form>
@@ -486,7 +485,8 @@
         </section>
         <!-- end gift-registration-section -->
 
-
+{% endif %}
+        {% endif %}
         <!-- start footer -->
         <footer class="site-footer">
             <div class="back-to-top">
@@ -503,8 +503,7 @@
         </footer>
         <!-- end footer -->
 
-        {% endif %}
-        {% endif %}
+        
 
     </div>
     <!-- end of page-wrapper -->
