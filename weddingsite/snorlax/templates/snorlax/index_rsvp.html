@@ -60,15 +60,6 @@
         <!-- end preloader -->
 
 
-        <!-- strat music-box -->
-        <div class="music-box">
-            <button class="music-box-toggle-btn">
-                <i class="fa fa-music"></i>
-            </button>
-        </div>
-        <!-- end music box -->
-
-
         <!-- Start header -->
         <header id="header" class="site-header header-style-2">
             <nav class="navigation navbar navbar-default">
@@ -87,11 +78,11 @@
                     <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder">
                         <button class="close-navbar"><i class="fa fa-close"></i></button>
                         <ul class="nav navbar-nav">
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#couple">Couple</a></li>
+                            <li><a href="#home">{% trans 'Home' %}</a></li>
+                            <li><a href="#couple">{% trans 'Couple' %}</a></li>
                             {% if user.is_authenticated %}
                             {% if not user.is_staff or not user.is_admin %}
-                            <li><a href="#events">Events</a></li>
+                            <li><a href="#events">{% trans 'Events' %}</a></li>
                             {% endif %}
                             {% endif %}
                             <li><a href="#rsvp">RSVP</a></li>
@@ -150,7 +141,7 @@
                 </div>
 
                 <div class="save-the-date">
-                    <h4>Save the date</h4>
+                    <h4>{% trans 'Save the date' %}</h4>
                     <span class="date">14 SEP 2018</span>
                 </div>
             </div>
@@ -215,12 +206,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col col-md-4">
-                        <h2><span>We are waiting for.....</span> The adventure</h2>
+                        <h2><span>{% trans 'We are waiting for' %}.....</span> {% trans 'The adventure' %}</h2>
                     </div>
                     <div class="col col-md-7 col-md-offset-1">
                         <div class="count-down-clock">
                             <div id="clock">
-
                             </div>
                         </div>
                     </div>
@@ -236,7 +226,7 @@
                     <div class="col col-xs-12">
                         <div class="section-title">
                             <div class="vertical-line"><span><i class="fi flaticon-two"></i></span></div>
-                            <h2>Wedding events</h2>
+                            <h2>{% trans 'Wedding events' %}</h2>
                         </div>
                     </div>
                 </div> <!-- end section-title -->
@@ -248,14 +238,14 @@
                                 <img src="{% static 'images/events/img-1.jpg' %}" alt class="img img-responsive">
                             </div>
                             <div class="details">
-                                <h3>The reception</h3>
+                                <h3>{% trans 'The reception' %}</h3>
                                 <ul>
-                                    <li><i class="fa fa-map-marker"></i> 32 big bro road, Chanpai, London.</li>
-                                    <li><i class="fa fa-clock-o"></i> Nov 25 2017, 9AM - 5PM</li>
+                                    <li><i class="fa fa-map-marker"></i> Largo Cattedrale, 1, 70037 Ruvo di Puglia BA, Italy.</li>
+                                    <li><i class="fa fa-clock-o"></i> Sep 14 2019, 11:30AM</li>
                                 </ul>
-                                <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-                                <a class="see-location-btn popup-gmaps" href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25211.21212385712!2d144.95275648773628!3d-37.82748510398018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce7e0!2zTWVsYm91cm5lIFZJQyAzMDA0LCDgpoXgprjgp43gpp_gp43gprDgp4fgprLgpr_gpq_gprzgpr4!5e0!3m2!1sbn!2sbd!4v1503742051881">
-                                    See location <i class="fa fa-angle-right"></i>
+                                <p>Basílica de Ruvo di Puglia </p>
+                                <a class="see-location-btn popup-gmaps" href="https://maps.google.com/maps?q=Largo%20Cattedrale%2C%201%2C%2070037%20Ruvo%20di%20Puglia%20BA%2C%20Italy&t=&z=17&ie=UTF8&iwloc=&output=embed">
+                                    {% trans 'See location' %} <i class="fa fa-angle-right"></i>
                                 </a>
                             </div>
                         </div>
@@ -264,14 +254,14 @@
                                 <img src="{% static 'images/events/img-2.jpg' %}" alt class="img img-responsive">
                             </div>
                             <div class="details">
-                                <h3>Wedding party</h3>
+                                <h3>{% trans 'Wedding party' %}</h3>
                                 <ul>
-                                    <li><i class="fa fa-map-marker"></i> 32 big bro road, Chanpai, London.</li>
-                                    <li><i class="fa fa-clock-o"></i> Nov 25 2017, 9AM - 5PM</li>
+                                    <li><i class="fa fa-map-marker"></i> Contrada Torre Di Nebbia, 70033 Corato BA, Italia.</li>
+                                    <li><i class="fa fa-clock-o"></i> Sep 14 2019, 9AM - 5PM</li>
                                 </ul>
-                                <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-                                <a class="see-location-btn popup-gmaps" href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.0160484383277!2d144.99053291585201!3d-37.81309307975254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642ef89a7e023%3A0xb1353055e38c1ab8!2sNew+York+Tomato+Cafe!5e0!3m2!1sbn!2sbd!4v1503743893919">
-                                    See location <i class="fa fa-angle-right"></i>
+                                <p>Masseria torre di nebbia. </p>
+                                <a class="see-location-btn popup-gmaps" href="https://maps.google.com/maps?q=Contrada%20Torre%20Di%20Nebbia%2C%2070033%20Corato%20BA%2C%20Italia&t=&z=13&ie=UTF8&iwloc=&output=embed">
+                                    {% trans 'See location' %} <i class="fa fa-angle-right"></i>
                                 </a>
                             </div>
                         </div>
@@ -291,7 +281,7 @@
                     <div class="col col-xs-12">
                         <div class="section-title-white">
                             <div class="vertical-line"><span><i class="fi flaticon-two"></i></span></div>
-                            <h2>Join our party</h2>
+                            <h2>{% trans 'Join our party' %}</h2>
                         </div>
                     </div>
                 </div> <!-- end section-title -->
@@ -337,7 +327,7 @@
                 {% endif %}
                 <div class="row content">
                     <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                        <p>Please confirm before March 31th, 2019.</p>
+                        <p>{% trans 'Please confirm before March 31th, 2019.' %}</p>
 
                         {% if form_name == 'person' %}
                         <form id="rsvp form" class="form row" method="POST">
@@ -346,7 +336,7 @@
                                 {{ form.full_name }}
                             </div>
                             <div class="col col-sm-12 submit-btn">
-                                <button type="submit" class="submit" name="submit">Find my invitation</button>
+                                <button type="submit" class="submit" name="submit">{% trans 'Find my invitation' %}</button>
                             </div>
                             
                         </form>
@@ -358,7 +348,7 @@
 
                             <div class="f-management" id="{forloop.counter}}" >
                                 <p>
-                                    <b>Guest {{forloop.counter}} of {{ total_guest }} : 
+                                    <b>{% trans 'Guest' %} {{forloop.counter}} {% trans 'of' %} {{ total_guest }} : 
                                     {{ single_form.full_name.value }}</b>
                                 </p>
                                     <div class="col col-sm-6">
@@ -381,8 +371,8 @@
 
                             </div>
                             <div class="col col-sm-12 submit-btn">
-                                    <button type="submit" class="submit" name="back" formnovalidate>Back</button>
-                                    <button type="submit" class="submit" name="submit">Confirmar Asistencia</button>
+                                    <button type="submit" class="submit" name="back" formnovalidate>{% trans 'Back' %}</button>
+                                    <button type="submit" class="submit" name="submit">{% trans 'Confirmar Asistencia' %}</button>
                                 </div>
                             </form>
                         {% endif %}
@@ -509,8 +499,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col col-xs-12">
-                        <h2>Forever and Always Our Love</h2>
-                        <span>- Mick (The groom)</span>
+                        <h2>{% trans 'Forever and Always Our Love' %}</h2>
+                        <span>- Davide ({% trans 'The groom' %})</span>
                     </div>
                 </div> <!-- end row -->
             </div> <!-- end container -->

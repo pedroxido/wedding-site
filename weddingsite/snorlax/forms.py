@@ -12,7 +12,7 @@ class PersonForm(forms.ModelForm):
 			'full_name' : forms.TextInput(
 				attrs={
 					'class':'form-control',
-					'placeholder': 'Your Name*'
+					'placeholder': _('Your Name*')
 				}
 			)
 		}

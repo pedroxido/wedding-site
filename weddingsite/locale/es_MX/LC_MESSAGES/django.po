@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-30 17:51-0600\n"
+"POT-Creation-Date: 2019-01-31 10:57-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: snorlax/forms.py:15
+msgid "Your Name*"
+msgstr "Tu nombre*"
 
 #: snorlax/forms.py:24
 msgid ""
@@ -77,6 +81,83 @@ msgstr "Fecha de confirmacion"
 #: snorlax/models.py:34
 msgid "creation date"
 msgstr "fecha de creacion"
+
+#: snorlax/templates/snorlax/index_rsvp.html:90
+msgid "Home"
+msgstr "Inicio"
+
+#: snorlax/templates/snorlax/index_rsvp.html:91
+msgid "Couple"
+msgstr "Los Novios"
+
+#: snorlax/templates/snorlax/index_rsvp.html:94
+msgid "Events"
+msgstr "Eventos"
+
+#: snorlax/templates/snorlax/index_rsvp.html:153
+msgid "Save the date"
+msgstr "Reserva"
+
+#: snorlax/templates/snorlax/index_rsvp.html:218
+msgid "We are waiting for"
+msgstr "Estamos esperando"
+
+#: snorlax/templates/snorlax/index_rsvp.html:218
+msgid "The adventure"
+msgstr "La aventura"
+
+#: snorlax/templates/snorlax/index_rsvp.html:238
+msgid "Wedding events"
+msgstr "Eventos de la boda"
+
+#: snorlax/templates/snorlax/index_rsvp.html:250
+msgid "The reception"
+msgstr "La misa"
+
+#: snorlax/templates/snorlax/index_rsvp.html:257
+#: snorlax/templates/snorlax/index_rsvp.html:273
+msgid "See location"
+msgstr "Ver ubicacion"
+
+#: snorlax/templates/snorlax/index_rsvp.html:266
+msgid "Wedding party"
+msgstr "La fiesta"
+
+#: snorlax/templates/snorlax/index_rsvp.html:293
+msgid "Join our party"
+msgstr "Unete a nuestra fiesta"
+
+#: snorlax/templates/snorlax/index_rsvp.html:339
+msgid "Please confirm before March 31th, 2019."
+msgstr "Favor de confirmar antes del 31 de Marzo del 2019."
+
+#: snorlax/templates/snorlax/index_rsvp.html:348
+msgid "Find my invitation"
+msgstr "Buscar mi invitacion"
+
+#: snorlax/templates/snorlax/index_rsvp.html:360
+msgid "Guest"
+msgstr "Invitado"
+
+#: snorlax/templates/snorlax/index_rsvp.html:360
+msgid "of"
+msgstr "de"
+
+#: snorlax/templates/snorlax/index_rsvp.html:383
+msgid "Back"
+msgstr "No eres tu?"
+
+#: snorlax/templates/snorlax/index_rsvp.html:384
+msgid "Confirmar Asistencia"
+msgstr "Confirmar Asistencia"
+
+#: snorlax/templates/snorlax/index_rsvp.html:511
+msgid "Forever and Always Our Love"
+msgstr "Por siempre y para siempre nuestro amor"
+
+#: snorlax/templates/snorlax/index_rsvp.html:512
+msgid "The groom"
+msgstr "El novio"
 
 #: weddingsite/settings.py:117
 msgid "Spanish"
