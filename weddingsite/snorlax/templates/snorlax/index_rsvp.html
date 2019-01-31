@@ -131,7 +131,6 @@
                         <span class=" wow fadeInUp" data-wow-delay="1.70s">r</span>
 
                             {% elif language == 'it' %}
-                            ci sposeremo
                         <span class=" wow fadeInUp" data-wow-delay="1.05s">C</span>
                         <span class=" wow fadeInUp" data-wow-delay="1.10s">i</span>
                         <span>&nbsp;</span>
@@ -169,8 +168,16 @@
                             </div>
                             <div class="details">
                                 <div class="details-inner">
-                                    <h3>The groom</h3>
-                                    <p>Hi I am suntina , dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+                                    <h3>El Novio</h3>
+                                    <p>{% if language == 'es' %}Hola soy Davide, pugliese de corazón. Nací el 1 de Julio 1989. Soy conocido como Dade, amorcito o mangia mangia. Me gusta mucho la pasta al forno, pizza, y mozzarella. Siempre he sido curioso y explorador por lo que me arriesgue a estudiar en otras ciudades y así realizar mi tesis de maestría en Dinamarca, lugar donde conocí a mi amor.
+                                        Espero que logren compartir esta gran aventura con nosotros.
+                                        Cariños
+                                        {% elif language == 'it' %}
+                                        Ciao, sono Davide, pugliese dal cuore. Sono nato il 1 ° luglio 1989. Sono conosciuto come Dade, amorcito o mangia mangia. Mi piace molto la pasta con forno, pizza e mozzarella. Sono sempre stato curioso e un esploratore, quindi ho rischiato di studiare in altre città e di fare la tesi di master in Danimarca, dove ho incontrato il mio amore.
+                                         Spero tu possa condividere questa grande avventura con noi.
+                                         Carinos
+                                        {% endif %}
+                                    </p>
                                     <span class="signature">Davide</span>
                                 </div>
                             </div>
@@ -178,8 +185,15 @@
                         <div class="gb bride">
                             <div class="details">
                                 <div class="details-inner">
-                                    <h3>The Bride</h3>
-                                    <p>Hi I am suntina , dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+                                    <h3>La novia</h3>
+                                    <p>{% if language == 'es' %}Guayaquileña de corazón, nacida el 29 de abril de 1987. Soy una persona reservada pero aventurera que siempre gustó de viajar alrededr del mundo; por lo que realicé mi pregrado y postgrado en Chile. Me encanta el encebollado y comer en los agachaditos, además de bailar, hacer aeroyoga, viajar y ser mamá. 
+                                    Espero logren compartir esta gran aventura con nosotros. 
+                                    cariños
+                                    {%  elif language == 'it' %}
+                                    Guayaquileña di cuore, nato il 29 aprile 1987. Sono una persona riservata ma avventurosa che ha sempre amato viaggiare in tutto il mondo; così ho fatto il mio corso di laurea e post-laurea in Cile. Adoro l'encebollado e mangiare negli agachaditos, oltre a ballare, fare aeroyoga, viaggiare e fare la mamma.
+                                     Spero tu possa condividere questa grande avventura con noi.
+                                     Carinos
+                                    {% endif %}</p>
                                     <span class="signature">Andrea</span>
                                 </div>
                             </div>
@@ -488,7 +502,7 @@
 {% endif %}
         {% endif %}
         <!-- start footer -->
-        <footer class="site-footer">
+        <footer class="wedding-couple-section section-padding">
             <div class="back-to-top">
                 <a href="#" class="back-to-top-btn"><span><i class="fi flaticon-cupid"></i></span></a>
             </div>
