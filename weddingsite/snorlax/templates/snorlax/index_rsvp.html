@@ -430,19 +430,16 @@
                     <div class="col col-xs-12">
                         <div class="section-title-white">
                             <div class="vertical-line"><span><i class="fi flaticon-two"></i></span></div>
-                            <h2>Getting there</h2>
+                            <h2>{% trans 'Getting there' %}</h2>
                         </div>
                     </div>
                 </div> <!-- end section-title -->
 
                 <div class="row content">
-                    <div class="col col-md-6">
-                        <h3>Transportation</h3>
-                        <p> industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s</p>
-                    </div>
-                    <div class="col col-md-6">
-                        <h3>Accommodations</h3>
-                        <p> industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s</p>
+                    <p>{% trans 'We recomend using Kayak for the flight/hotel deals' %}</p>
+                    <div class="col col-md-12" style="height:350px">
+                        <div id="kayakIntegration">
+                        </div>
                     </div>
                 </div> <!-- end row -->
             </div> <!-- end container -->
@@ -457,15 +454,23 @@
                     <div class="col col-xs-12">
                         <div class="section-title">
                             <div class="vertical-line"><span><i class="fi flaticon-two"></i></span></div>
-                            <h2>Gift registration</h2>
+                            <h2>{% trans 'Gift' %}</h2>
                         </div>
                     </div>
                 </div> <!-- end section-title -->
 
                 <div class="row content">
                     <div class="col col-lg-10 col-lg-offset-1">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, cupiditate, repudiandae. A ab sit laboriosam quis distinctio dignissimos, nemo cum sed hic, deleniti maiores rem iste labore commodi perferendis cumque.repudiandae. A ab sit laboriosam quis distinctio dignissimos, nemo cum sed hic.</p>
-
+                        <p>Si no puedes acompañar a Andrea y Davide en su aventura puedes enviar su regalo de matrimonio en los siguientes links.</p>
+                        <h3>Ecuador</h3>
+                        <p>
+                                Cuenta bancaria banco del Pacífico</br>
+                                Cuenta de ahorro 1043596460</br>
+                                Andrea Orellana-Manzano</br>
+                                Ci: 0924157233</br>
+                                Mail: andrea.orellanamanzano@gmail.com 
+                        </p>
+<!--
                         <div class="gif-registration-slider">
                             <div class="register">
                                 <img src="{% static 'images/gift/img-1.jpg' %}" alt class="img img-responsive">
@@ -483,6 +488,7 @@
                                 <img src="{% static 'images/gift/img-2.jpg' %}" alt class="img img-responsive">
                             </div>
                         </div>
+                    -->
                     </div>
                 </div> <!-- end row -->
             </div> <!-- end container -->
@@ -525,6 +531,8 @@
     <!-- Custom script for this template -->
     <script src="{% static 'js/script.js' %}"></script>
 
+    <script type="text/javaScript" src="https://www.kayak.com/affiliate/widget-v2.js"></script>
+
     {% if error_focus or form_name %}
         {% if error_focus == "PersonForm" or form_name == 'rsvp-focus' %}
             <script>
@@ -537,12 +545,25 @@
         {% endif %}
     {% endif %}
 
-    <script>
-        $('.f-management').each(function(i, obj) {
-            if(i >= {{total_guest}}){
-                $(this).hide();
-            }
-        });
-    </script>
+    {% if user.is_authenticated %}
+        {% if not user.is_staff or not user.is_admin %}
+        <script type="text/javaScript" src="https://www.kayak.com/affiliate/widget-v2.js"></script>
+        <script type="text/javaScript">
+            KAYAK.embed({
+                container: document.getElementById("kayakIntegration"),
+                defaultProduct: "flights",
+                startDate: "2019-10-02",
+                endDate: "2019-10-28",
+                origin: "Guayaquil (GYE)",
+                destination: "Bari (BRI)",
+                travelers: {{total_guest}},
+                lc: "{{language}}",
+                cc: {% if language == 'es' %}"ec"{% else %}"it"{% endif %}
+            });
+        </script>
+
+        {% endif %}
+    {% endif %}
+
 </body>
 </html>
