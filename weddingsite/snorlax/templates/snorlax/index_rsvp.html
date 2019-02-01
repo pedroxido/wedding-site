@@ -142,7 +142,7 @@
 
                 <div class="save-the-date">
                     <h4>{% trans 'Save the date' %}</h4>
-                    <span class="date">14 SEP 2018</span>
+                    <span class="date">14 SEP 2019</span>
                 </div>
             </div>
         </section>
@@ -423,31 +423,7 @@
         {% if user.is_authenticated %}
         {% if not user.is_staff or not user.is_admin %}
 
-        <!-- start getting-there-section -->
-        <section class="getting-there-section section-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="col col-xs-12">
-                        <div class="section-title-white">
-                            <div class="vertical-line"><span><i class="fi flaticon-two"></i></span></div>
-                            <h2>{% trans 'Getting there' %}</h2>
-                        </div>
-                    </div>
-                </div> <!-- end section-title -->
-
-                <div class="row content">
-                    <p>{% trans 'We recomend using Kayak for the flight/hotel deals' %}</p>
-                    <div class="col col-md-12" style="height:350px">
-                        <div id="kayakIntegration">
-                        </div>
-                    </div>
-                </div> <!-- end row -->
-            </div> <!-- end container -->
-        </section>
-        <!-- end getting-there-section -->
-
-
-        <!-- start gift-registration-section -->
+                <!-- start gift-registration-section -->
         <section class="gift-registration-section section-padding">
             <div class="container">
                 <div class="row">
@@ -461,14 +437,16 @@
 
                 <div class="row content">
                     <div class="col col-lg-10 col-lg-offset-1">
-                        <p>Si no puedes acompañar a Andrea y Davide en su aventura puedes enviar su regalo de matrimonio en los siguientes links.</p>
-                        <h3>Ecuador</h3>
+                        <p><strong>Si no puedes acompañar a Andrea y Davide en su aventura puedes enviar su regalo de matrimonio en los siguientes links.</strong></p>
+                        <h3><strong>Ecuador</strong></h3>
                         <p>
+                            <strong>
                                 Cuenta bancaria banco del Pacífico</br>
                                 Cuenta de ahorro 1043596460</br>
                                 Andrea Orellana-Manzano</br>
                                 Ci: 0924157233</br>
-                                Mail: andrea.orellanamanzano@gmail.com 
+                                Mail: andrea.orellanamanzano@gmail.com
+                            </strong>
                         </p>
 <!--
                         <div class="gif-registration-slider">
@@ -494,6 +472,29 @@
             </div> <!-- end container -->
         </section>
         <!-- end gift-registration-section -->
+
+        <!-- start getting-there-section -->
+        <section class="getting-there-section section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-xs-12">
+                        <div class="section-title-white">
+                            <div class="vertical-line"><span><i class="fi flaticon-two"></i></span></div>
+                            <h2>{% trans 'Getting there' %}</h2>
+                        </div>
+                    </div>
+                </div> <!-- end section-title -->
+
+                <div class="row content">
+                    <p>{% trans 'We recomend using Kayak for the flight/hotel deals' %}</p>
+                    <div class="col col-md-12" style="height:350px">
+                        <div id="kayakIntegration">
+                        </div>
+                    </div>
+                </div> <!-- end row -->
+            </div> <!-- end container -->
+        </section>
+        <!-- end getting-there-section -->
 
 {% endif %}
         {% endif %}
