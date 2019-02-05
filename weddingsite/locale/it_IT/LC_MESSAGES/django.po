@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-31 15:26-0600\n"
+"POT-Creation-Date: 2019-02-05 12:08-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -95,78 +95,78 @@ msgstr "Eventi"
 
 #: snorlax/templates/snorlax/index_rsvp.html:144
 msgid "Save the date"
-msgstr "Salva la data"
+msgstr "Save the date"
 
-#: snorlax/templates/snorlax/index_rsvp.html:209
+#: snorlax/templates/snorlax/index_rsvp.html:208
 msgid "We are waiting for"
 msgstr "Stiamo aspettando"
 
-#: snorlax/templates/snorlax/index_rsvp.html:209
+#: snorlax/templates/snorlax/index_rsvp.html:208
 msgid "The adventure"
 msgstr "L'avventura"
 
-#: snorlax/templates/snorlax/index_rsvp.html:229
+#: snorlax/templates/snorlax/index_rsvp.html:228
 msgid "Wedding events"
 msgstr "Eventi di nozze"
 
-#: snorlax/templates/snorlax/index_rsvp.html:241
+#: snorlax/templates/snorlax/index_rsvp.html:240
 msgid "The reception"
 msgstr "La massa"
 
-#: snorlax/templates/snorlax/index_rsvp.html:248
-#: snorlax/templates/snorlax/index_rsvp.html:264
+#: snorlax/templates/snorlax/index_rsvp.html:247
+#: snorlax/templates/snorlax/index_rsvp.html:263
 msgid "See location"
 msgstr "Vedere la posizione"
 
-#: snorlax/templates/snorlax/index_rsvp.html:257
+#: snorlax/templates/snorlax/index_rsvp.html:256
 msgid "Wedding party"
 msgstr "La festa"
 
-#: snorlax/templates/snorlax/index_rsvp.html:284
+#: snorlax/templates/snorlax/index_rsvp.html:283
 msgid "Join our party"
 msgstr "Unisciti alla nostra festa"
 
-#: snorlax/templates/snorlax/index_rsvp.html:330
+#: snorlax/templates/snorlax/index_rsvp.html:329
 msgid "Please confirm before March 31th, 2019."
 msgstr "Si prega di confermare prima del 31 marzo 2019"
 
-#: snorlax/templates/snorlax/index_rsvp.html:339
+#: snorlax/templates/snorlax/index_rsvp.html:338
 msgid "Find my invitation"
 msgstr "Trova il mio invito"
 
-#: snorlax/templates/snorlax/index_rsvp.html:351
+#: snorlax/templates/snorlax/index_rsvp.html:350
 msgid "Guest"
 msgstr "Ospite"
 
-#: snorlax/templates/snorlax/index_rsvp.html:351
+#: snorlax/templates/snorlax/index_rsvp.html:350
 msgid "of"
 msgstr "di"
 
-#: snorlax/templates/snorlax/index_rsvp.html:374
+#: snorlax/templates/snorlax/index_rsvp.html:373
 msgid "Back"
 msgstr "Non sei tu?"
 
-#: snorlax/templates/snorlax/index_rsvp.html:375
+#: snorlax/templates/snorlax/index_rsvp.html:374
 msgid "Confirmar Asistencia"
 msgstr "Conferma Assistenza"
 
-#: snorlax/templates/snorlax/index_rsvp.html:433
-msgid "Getting there"
-msgstr "Come arrivarci"
-
-#: snorlax/templates/snorlax/index_rsvp.html:439
-msgid "We recomend using Kayak for the flight/hotel deals"
-msgstr "Ti consigliamo di utilizzare Kayak.com per le offerte di voli / hotel"
-
-#: snorlax/templates/snorlax/index_rsvp.html:457
+#: snorlax/templates/snorlax/index_rsvp.html:432
 msgid "Gift"
 msgstr "Registrazione del regalo"
 
-#: snorlax/templates/snorlax/index_rsvp.html:508
-msgid "Forever and Always Our Love"
-msgstr "Sempre e sempre amore"
+#: snorlax/templates/snorlax/index_rsvp.html:492
+msgid "Getting there"
+msgstr "Come arrivarci"
 
-#: snorlax/templates/snorlax/index_rsvp.html:509
+#: snorlax/templates/snorlax/index_rsvp.html:507
+msgid "We recomend using Kayak for the flight/hotel deals"
+msgstr "Ti consigliamo di utilizzare Kayak.com per le offerte di voli / hotel"
+
+#: snorlax/templates/snorlax/index_rsvp.html:527
+msgid "Forever and Always Our Love"
+msgstr "Forever and Always Our Love"
+
+#: snorlax/templates/snorlax/index_rsvp.html:528
 msgid "The groom"
 msgstr "Lo sposo"
 

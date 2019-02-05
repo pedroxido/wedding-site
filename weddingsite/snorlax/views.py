@@ -15,7 +15,10 @@ from django import http
 def render_rsvp(request):
 
 	if request.user.is_authenticated :
-		return redirect('user_login_rsvp')
+		if request.user.is_staff:
+			logout(request)
+		else:
+			return redirect('user_login_rsvp')
 
 	ctx = {}
 	form = PersonForm(request.POST or None, request.FILES or None)
@@ -59,6 +62,13 @@ def group_handler(user):
 
 @login_required(login_url='/' + get_language() + '/rsvp/#rsvp')
 def render_auth_rsvp(request):
+	try:
+		if request.user.is_authenticated :
+			if request.user.is_staff:
+				logout(request)
+	except:
+		pass
+
 	ctx = {}
 	ctx['language'] = get_language()
 
@@ -69,37 +79,28 @@ def render_auth_rsvp(request):
 	else:
 		ctx['form_name'] = 'rsvp'
 
-	print(ctx['form_name'])
-
 	member = group_handler(request.user)
 	ctx['members'] = member.values(person=F("member__full_name"))
 	ctx['total_guest'] = member.values('member').count()
-	print("total guest: " + str(ctx['total_guest']))
 	formset = modelformset_factory(Person, form=RSVPForm, extra=0)
 
 	
 	#get a list of values from ctx[members]
 	param_dict = list(ctx['members'])
 	person_qs = query_values_helper(param_dict)
-	print("OLA")
 	initial_rsvp = Person.objects.all().filter(full_name__in=person_qs)
-	print(initial_rsvp.count())
-	form = formset(request.POST or None, queryset=initial_rsvp)
-	print("CHIx")
-	
+	form = formset(request.POST or None, queryset=initial_rsvp)	
 
 	if request.method == 'POST':
 		if 'submit' in request.POST:
 			for f in form:
-				print(f)
-			if form.is_valid():
-				rsvp = form.save()
-				ctx['success'] = 1
-				ctx['form_name'] = 'rsvp-focus'
-			else:
-				print(form.errors)
-				ctx['error_focus'] = 'RSVPForm'
-				ctx['form_name'] = 'rsvp-focus'
+				if form.is_valid():
+					rsvp = form.save()
+					ctx['success'] = 1
+					ctx['form_name'] = 'rsvp-focus'
+				else:
+					ctx['error_focus'] = 'RSVPForm'
+					ctx['form_name'] = 'rsvp-focus'
 		elif 'back' in request.POST:
 			logout(request)
 			return redirect('render_rsvp')
