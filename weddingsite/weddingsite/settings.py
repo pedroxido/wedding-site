@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-from env import *
+#from env import *
 
 from django.utils.translation import ugettext_lazy as _
 
@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*q9)=o_ih^lipk2+s@u&z&#7=aehos0#uq80s=b@1@@y6crmy)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = DEBUG_VAR
+DEBUG = False#DEBUG_VAR
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
