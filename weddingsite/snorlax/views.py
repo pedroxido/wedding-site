@@ -10,6 +10,8 @@ from django.forms import modelformset_factory
 from .models import  FamilyGroup, Person
 import sys
 from django import http
+import itertools
+from difflib import SequenceMatcher
 
 # Create your views here.
 def render_rsvp(request):
@@ -39,6 +41,8 @@ def render_rsvp(request):
 
 					return redirect('user_login_rsvp')
 			else:
+				users = possible_matches(form['full_name'].data)
+				ctx['did_you_mean'] = users
 				ctx['error_focus'] = 'PersonForm'
 		except Exception as e:
 			if 'MultipleObjectsReturned' in type(e).__name__:
@@ -50,6 +54,21 @@ def render_rsvp(request):
 	ctx['form'] = form
 
 	return render(request, 'snorlax/index_rsvp.html', ctx)
+
+def possible_matches(input_string):
+	word_list = list(input_string[i:j+1] for i in range (len(input_string)) for j in range(i,len(input_string)))
+	persons = set()
+	for word in word_list:
+		try:
+			person_qs = Person.objects.filter(full_name__icontains=word).values_list('full_name')
+			for person in person_qs:
+				ratio_index = SequenceMatcher(None, word, person[0]).ratio()
+				if ratio_index > 0.6:
+					persons.add(person[0])	
+		except:
+			print(sys.exc_info())
+	return persons
+
 
 def group_handler(user):
 	person_group_object = FamilyGroup.objects.filter(member__full_name=user)
