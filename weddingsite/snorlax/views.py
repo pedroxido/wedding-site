@@ -79,7 +79,7 @@ def group_handler(user):
 	return group
 
 
-@login_required(login_url='/' + get_language() + '/rsvp/#rsvp')
+#@login_required(login_url='/' + get_language() + '/rsvp/#rsvp')
 def render_auth_rsvp(request):
 	try:
 		if request.user.is_authenticated :
