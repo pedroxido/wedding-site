@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-05 12:08-0600\n"
+"POT-Creation-Date: 2019-02-15 19:05-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,41 +43,57 @@ msgstr "Declino"
 
 #: snorlax/models.py:12
 msgid "Meal Option 1"
-msgstr "Opzione Pasto 1"
+msgstr "Senza restrizioni"
 
 #: snorlax/models.py:13
 msgid "Meal Option 2"
-msgstr "Opzione Pasto 2"
+msgstr "Senza sale"
 
 #: snorlax/models.py:14
 msgid "Meal Option 3"
-msgstr "Opzione Pasto 3"
+msgstr "senza zucchero"
 
-#: snorlax/models.py:18 snorlax/models.py:35
+#: snorlax/models.py:15
+msgid "Meal Option 4"
+msgstr "Celiaco"
+
+#: snorlax/models.py:16
+msgid "Meal Option 5"
+msgstr "Intollerante al lattosio"
+
+#: snorlax/models.py:17
+msgid "Meal Option 6"
+msgstr "Vegano"
+
+#: snorlax/models.py:18
+msgid "Meal Option 7"
+msgstr "Vegetariano"
+
+#: snorlax/models.py:22 snorlax/models.py:39
 msgid "full name"
 msgstr "nome e cognome"
 
-#: snorlax/models.py:19
+#: snorlax/models.py:23
 msgid "email"
 msgstr "e-mail"
 
-#: snorlax/models.py:21
+#: snorlax/models.py:25
 msgid "status"
 msgstr "stato"
 
-#: snorlax/models.py:22
+#: snorlax/models.py:26
 msgid "meal options"
 msgstr "opzione di pasto"
 
-#: snorlax/models.py:23
+#: snorlax/models.py:27
 msgid "dietary restrictions"
 msgstr "restrizione dietetica"
 
-#: snorlax/models.py:24
+#: snorlax/models.py:28
 msgid "RSVP date"
 msgstr "data di conferma"
 
-#: snorlax/models.py:34
+#: snorlax/models.py:38
 msgid "creation date"
 msgstr "data di creazione"
 
@@ -126,47 +142,47 @@ msgstr "La festa"
 msgid "Join our party"
 msgstr "Unisciti alla nostra festa"
 
-#: snorlax/templates/snorlax/index_rsvp.html:329
+#: snorlax/templates/snorlax/index_rsvp.html:336
 msgid "Please confirm before March 31th, 2019."
 msgstr "Si prega di confermare prima del 31 marzo 2019"
 
-#: snorlax/templates/snorlax/index_rsvp.html:338
+#: snorlax/templates/snorlax/index_rsvp.html:345
 msgid "Find my invitation"
 msgstr "Trova il mio invito"
 
-#: snorlax/templates/snorlax/index_rsvp.html:350
+#: snorlax/templates/snorlax/index_rsvp.html:357
 msgid "Guest"
 msgstr "Ospite"
 
-#: snorlax/templates/snorlax/index_rsvp.html:350
+#: snorlax/templates/snorlax/index_rsvp.html:357
 msgid "of"
 msgstr "di"
 
-#: snorlax/templates/snorlax/index_rsvp.html:373
+#: snorlax/templates/snorlax/index_rsvp.html:380
 msgid "Back"
 msgstr "Non sei tu?"
 
-#: snorlax/templates/snorlax/index_rsvp.html:374
+#: snorlax/templates/snorlax/index_rsvp.html:381
 msgid "Confirmar Asistencia"
 msgstr "Conferma Assistenza"
 
-#: snorlax/templates/snorlax/index_rsvp.html:432
+#: snorlax/templates/snorlax/index_rsvp.html:439
 msgid "Gift"
 msgstr "Registrazione del regalo"
 
-#: snorlax/templates/snorlax/index_rsvp.html:492
+#: snorlax/templates/snorlax/index_rsvp.html:501
 msgid "Getting there"
 msgstr "Come arrivarci"
 
-#: snorlax/templates/snorlax/index_rsvp.html:507
+#: snorlax/templates/snorlax/index_rsvp.html:516
 msgid "We recomend using Kayak for the flight/hotel deals"
 msgstr "Ti consigliamo di utilizzare Kayak.com per le offerte di voli / hotel"
 
-#: snorlax/templates/snorlax/index_rsvp.html:527
+#: snorlax/templates/snorlax/index_rsvp.html:536
 msgid "Forever and Always Our Love"
 msgstr "Forever and Always Our Love"
 
-#: snorlax/templates/snorlax/index_rsvp.html:528
+#: snorlax/templates/snorlax/index_rsvp.html:537
 msgid "The groom"
 msgstr "Lo sposo"
 

@@ -287,8 +287,7 @@
                 {% if success %}
                                 <div class="alert alert-success" id="success-alert">
                                     <button type="button" class="close" data-dismiss="alert">x</button>
-                                    <strong>Success! </strong>
-                                    Your information has been stored
+                                    <strong>{% if language == 'es' %} Tu asistencia/opciones de comida han sido registradas. Gracias! {% elif language == 'it' %} La tua partecipazione/opzione alimentare sono state registrate. Grazie. {% endif %}</strong>
                                 </div>
                                 <script>
                                     $(document).ready (function(){
@@ -509,9 +508,9 @@
                         </br>Si buscan estancias, es preferible que busquen cerca de Ruvo di Puglia utilizando airbnb, hotels, booking.
                         </br>
                         El traslado del aeropuerto a Ruvo de preferencia hacerlo vía trenes o buses.
-                            </br><a href="www.ferrovienordbarese.it">Ferrovienordbarese</a>
-                            </br><a href="www.trenitalia.com">Trenitalia</a>
-                            </br><a href="https://www.rome2rio.com/s/Bari/Ruvo-Di-Puglia">Rome2Rio : Bari a Ruvo di Puglia</a>
+                            </br><a href="www.ferrovienordbarese.it" style="color:white;"><strong>Ferrovienordbarese</strong></a>
+                            </br><a href="www.trenitalia.com" style="color:white"><strong>Trenitalia</strong></a>
+                            </br><a href="https://www.rome2rio.com/s/Bari/Ruvo-Di-Puglia" style="color:white"><strong>Rome2Rio : Bari a Ruvo di Puglia</strong></a>
                     </p>
                     <p>{% trans 'We recomend using Kayak for the flight/hotel deals' %}</p>
                     <div class="col col-md-12" style="height:350px">

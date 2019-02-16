@@ -11,7 +11,11 @@ RSVP_STATUS = (
 MEAL_OPTIONS = (
 	('MEAL_1', _('Meal Option 1')),
 	('MEAL_2', _('Meal Option 2')),
-	('MEAL_3', _('Meal Option 3'))
+	('MEAL_3', _('Meal Option 3')),
+	('MEAL_4', _('Meal Option 4')),
+	('MEAL_5', _('Meal Option 5')),
+	('MEAL_6', _('Meal Option 6')),
+	('MEAL_7', _('Meal Option 7')),
 )
 
 class Person(models.Model):
