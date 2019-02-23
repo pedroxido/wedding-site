@@ -137,6 +137,8 @@ def render_auth_rsvp(request):
 					rsvp.rsvp_date = timezone.now() + datetime.timedelta(days=2)
 					print(rsvp)
 					rsvp.save()
+					#reload form so the disabled fields apply
+					form = formset(request.POST or None, queryset=initial_rsvp)
 					ctx['success'] = 1
 					ctx['form_name'] = 'rsvp-focus'
 				else:

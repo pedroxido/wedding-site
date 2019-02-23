@@ -29,7 +29,6 @@ class RSVPForm(forms.ModelForm):
 	class Meta:
 		model = Person
 		fields = ('status', 'meal', 'notes', 'full_name', 'id', 'rsvp_date')
-		exclude = ('rsvp_date',)
 		labels = {
             'status': _('Will you go?'),
         }
@@ -56,4 +55,11 @@ class RSVPForm(forms.ModelForm):
 				}
 			),
 		}
+
+	def __init__(self, *args, **kwargs):
+		super(RSVPForm, self).__init__(*args, **kwargs)
+		instance = getattr(self, 'instance', None)
+		if instance and instance.rsvp_date:
+			self.fields['status'].disabled = True
+			self.fields['meal'].disabled = True
 
