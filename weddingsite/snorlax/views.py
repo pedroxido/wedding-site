@@ -42,6 +42,7 @@ def render_rsvp(request):
 					return redirect('user_login_rsvp')
 			else:
 				users = possible_matches(form['full_name'].data)
+				#print(users)
 				ctx['did_you_mean'] = users
 				ctx['error_focus'] = 'PersonForm'
 		except Exception as e:
@@ -58,16 +59,32 @@ def render_rsvp(request):
 def possible_matches(input_string):
 	word_list = list(input_string[i:j+1] for i in range (len(input_string)) for j in range(i,len(input_string)))
 	persons = set()
+	contains_high_prob_match = False
 	for word in word_list:
 		try:
 			person_qs = Person.objects.filter(full_name__icontains=word).values_list('full_name')
 			for person in person_qs:
 				ratio_index = SequenceMatcher(None, word, person[0]).ratio()
 				if ratio_index > 0.6:
-					persons.add(person[0])	
+					if ratio_index >= 0.8:
+						contains_high_prob_match = True
+					persons.add((person[0], ratio_index))	
 		except:
 			print(sys.exc_info())
-	return persons
+
+	#now we iterate through all the person set. If there's at least one person with ratio_index > 0.8
+	#then we will use only those indexes. If not, use all the ones that are bigger than 0.6
+	result = set()
+	if contains_high_prob_match:
+		index_param = 0.8
+	else:
+		index_param = 0.6
+
+	for person in persons:
+		if person[1] >= index_param:
+			result.add(person[0])
+
+	return result
 
 
 def group_handler(user):
