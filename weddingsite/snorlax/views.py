@@ -10,8 +10,10 @@ from django.forms import modelformset_factory
 from .models import  FamilyGroup, Person
 import sys
 from django import http
+from django.utils import timezone
 import itertools
 from difflib import SequenceMatcher
+import datetime
 
 # Create your views here.
 def render_rsvp(request):
@@ -130,8 +132,11 @@ def render_auth_rsvp(request):
 	if request.method == 'POST':
 		if 'submit' in request.POST:
 			for f in form:
-				if form.is_valid():
-					rsvp = form.save()
+				if f.is_valid():
+					rsvp = f.save(commit=False)
+					rsvp.rsvp_date = timezone.now() + datetime.timedelta(days=2)
+					print(rsvp)
+					rsvp.save()
 					ctx['success'] = 1
 					ctx['form_name'] = 'rsvp-focus'
 				else:

@@ -28,7 +28,8 @@ class RSVPForm(forms.ModelForm):
 
 	class Meta:
 		model = Person
-		fields = ('status', 'meal', 'notes', 'full_name', 'id')
+		fields = ('status', 'meal', 'notes', 'full_name', 'id', 'rsvp_date')
+		exclude = ('rsvp_date',)
 		labels = {
             'status': _('Will you go?'),
         }
